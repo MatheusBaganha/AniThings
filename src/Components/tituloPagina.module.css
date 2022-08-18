@@ -1,0 +1,20 @@
+.titulo {
+  display: block;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 128px;
+  color: #363636;
+  position: relative;
+}
+
+.titulo::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 4px;
+  border-radius: 3px;
+  background-color: #22455A;
+  position: absolute;
+  left: 50%;
+  bottom: -28px;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './buscar.module.css';
+import styles from './input.module.css';
 import EnviarBtn from './EnviarBtn';
 import Input from './Input';
 

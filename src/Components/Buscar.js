@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
 import styles from './buscar.module.css';
+import EnviarBtn from './EnviarBtn';
+import Input from './Input';
 
-const Buscar = ({type, placeholder}) => {
+const Buscar = ({ ativo, type, placeholder }) => {
   return (
-    <div className={styles.containerBuscar}>
-      <input className={styles.inputUrl} type={type} placeholder={placeholder}/>
-      <button className={styles.btnEnviar}>ENVIAR</button>
+    <div ativo={ativo} className={styles.containerBuscar}>
+      <Input type={type} placeholder={placeholder} required />
+      <EnviarBtn>ENVIAR</EnviarBtn>
     </div>
-  )
-}
+  );
+};
 
-export default Buscar
+export default Buscar;

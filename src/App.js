@@ -10,13 +10,16 @@ const App = () => {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path='/' element={<Procurar/>}/>
-        <Route path='/Frases' element={<Frases/>}/>
-        <Route path='/Populares' element={<Populares/>}/>
-        <Route path='/*' element={<div>Não encontrada. Pagina temporaria</div>}/>
+        <Route path="/" element={<Procurar />} />
+        <Route path="/Frases" element={<Frases />} />
+        <Route path="/Populares" element={<Populares />} />
+        <Route
+          path="/*"
+          element={<div>Não encontrada. Pagina temporaria</div>}
+        />
       </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};
 
 export default App;

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Frases = () => {
-  return (
-    <div>Frases</div>
-  )
-}
+  return <div>Frases</div>;
+};
 
-export default Frases
+export default Frases;

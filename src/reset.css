@@ -8,3 +8,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: #F5F4F4;
 }
+
+li:active, a:active {
+  text-decoration: none;
+}

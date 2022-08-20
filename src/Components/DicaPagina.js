@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
 import styles from './dicaPagina.module.css';
 
-const DicaPagina = ({children}) => {
+const DicaPagina = ({ children, ativo }) => {
   return (
-    <p className={styles.dica}>{children}</p>
-  )
-}
+    <p ativo={ativo} className={styles.dica}>
+      {children}
+    </p>
+  );
+};
 
-export default DicaPagina
+export default DicaPagina;

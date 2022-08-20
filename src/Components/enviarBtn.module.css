@@ -1,0 +1,21 @@
+.btnEnviar {
+  display: inline-block;
+  width: 144px;
+  height: 47px;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  background-color: #7CCC81;
+  border: 3px solid #7CCC81;
+  color: #F5F4F4;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+}
+
+.btnEnviar:focus {
+  border: 3px solid #6ec773;
+}
+
+.btnEnviar:hover {
+  background-color: #60c166;
+}

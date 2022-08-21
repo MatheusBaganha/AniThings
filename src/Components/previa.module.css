@@ -1,0 +1,18 @@
+.containerPrevia {
+  display: flex;
+  justify-content: space-between;
+  width: 566px;
+  height: 202px;
+  margin: 0 auto;
+}
+
+.imgContainer {
+  max-width: 360px;
+  margin-top: 48px;
+  justify-self: flex-end;
+}
+
+.img {
+  border-radius: 5px;
+  max-width: 100%;
+}

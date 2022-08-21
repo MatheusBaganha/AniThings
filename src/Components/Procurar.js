@@ -13,7 +13,7 @@ const Procurar = () => {
     return;
   }, [ativo]);
 
-  function handleClick(e) {
+  function handleClick() {
     setAtivo((ativo) => !ativo);
   }
 

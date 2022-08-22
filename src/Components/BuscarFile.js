@@ -31,16 +31,24 @@ const BuscarFile = ({ ativo, placeholder }) => {
     setSelectedImg(target.files[0]);
   }
 
+  // function onError() {
+  //   setPreview('local da imagem de erro);
+  // }
   return (
     <>
       <div ativo={ativo} className={styles.containerBuscarFile}>
         <label className={styles.label}>
-          <Input type="file" onChange={handleChange} required />
+          <Input
+            type="file"
+            accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/webp"
+            onChange={handleChange}
+            required
+          />
           {preview ? 'Imagem carregada' : placeholder}
         </label>
         <EnviarBtn>ENVIAR</EnviarBtn>
       </div>
-      {preview && <Previa imagem={preview} />}
+      {preview && <Previa imagem={preview} /*onError={onError}*/ />}
     </>
   );
 };

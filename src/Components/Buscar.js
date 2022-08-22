@@ -18,6 +18,10 @@ const Buscar = ({ ativo, type, placeholder }) => {
     setUrlWrote(url);
   }
 
+  // function onError() {
+  //   setUrlWrote('URL da imagem de erro');
+  // }
+
   return (
     <div ativo={ativo} className={styles.containerBuscar}>
       <Input
@@ -29,7 +33,7 @@ const Buscar = ({ ativo, type, placeholder }) => {
         required
       />
       <EnviarBtn>ENVIAR</EnviarBtn>
-      {urlWrote && <Previa imagem={urlWrote} />}
+      {urlWrote && <Previa imagem={urlWrote} /*onError={onError}*/ />}
     </div>
   );
 };

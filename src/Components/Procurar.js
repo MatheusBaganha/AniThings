@@ -30,7 +30,7 @@ const Procurar = () => {
       {Procurar && !ativo && (
         <DicaPagina>Formatos suportados: jpeg | png | webp</DicaPagina>
       )}
-      <form className={styles.form}>
+      <form>
         <div className={styles.containerButtons}>
           <Button ativo={ativo} handleClick={handleClick} disabled={ativo}>
             Link

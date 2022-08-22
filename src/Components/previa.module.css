@@ -2,17 +2,19 @@
   display: flex;
   justify-content: space-between;
   width: 566px;
-  height: 202px;
+  min-height: 250px;
   margin: 0 auto;
 }
 
 .imgContainer {
-  max-width: 360px;
+  width: 360px;
   margin-top: 48px;
   justify-self: flex-end;
 }
 
 .img {
+  display: block;
   border-radius: 5px;
   max-width: 100%;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, .25);
 }

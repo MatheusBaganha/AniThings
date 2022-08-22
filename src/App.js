@@ -4,6 +4,7 @@ import Procurar from './Components/Procurar';
 import Frases from './Components/Frases';
 import Header from './Components/Header';
 import Populares from './Components/Populares';
+import Footer from './Components/Footer';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           element={<div>Não encontrada. Pagina temporaria</div>}
         />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

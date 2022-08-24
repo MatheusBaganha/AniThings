@@ -32,18 +32,30 @@ const Procurar = () => {
       )}
       <form>
         <div className={styles.containerButtons}>
-          <Button ativo={ativo} handleClick={handleClick} disabled={ativo}>
+          <Button
+            ativo={ativo && 'true'}
+            handleClick={handleClick}
+            disabled={ativo}
+          >
             Link
           </Button>
-          <Button ativo={!ativo} handleClick={handleClick} disabled={!ativo}>
+          <Button
+            ativo={!ativo && 'true'}
+            handleClick={handleClick}
+            disabled={!ativo}
+          >
             Upload
           </Button>
         </div>
         {Procurar && ativo && (
-          <Buscar ativo={ativo} type="text" placeholder="URL da imagem" />
+          <Buscar
+            ativo={ativo && 'true'}
+            type="text"
+            placeholder="URL da imagem"
+          />
         )}
         {Procurar && !ativo && (
-          <BuscarFile ativo={!ativo} placeholder="Upload da imagem" />
+          <BuscarFile ativo={!ativo && 'true'} placeholder="Upload da imagem" />
         )}
       </form>
     </main>

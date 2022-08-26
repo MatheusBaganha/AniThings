@@ -37,25 +37,25 @@ const Procurar = () => {
             handleClick={handleClick}
             disabled={ativo}
           >
-            Link
+            Upload
           </Button>
           <Button
             ativo={!ativo && 'true'}
             handleClick={handleClick}
             disabled={!ativo}
           >
-            Upload
+            Link
           </Button>
         </div>
         {Procurar && ativo && (
+          <BuscarFile ativo={ativo && 'true'} placeholder="Upload da imagem" />
+        )}
+        {Procurar && !ativo && (
           <Buscar
-            ativo={ativo && 'true'}
+            ativo={!ativo && 'true'}
             type="text"
             placeholder="URL da imagem"
           />
-        )}
-        {Procurar && !ativo && (
-          <BuscarFile ativo={!ativo && 'true'} placeholder="Upload da imagem" />
         )}
       </form>
     </main>

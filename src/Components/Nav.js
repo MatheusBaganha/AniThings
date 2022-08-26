@@ -9,13 +9,13 @@ const Nav = ({ header }) => {
       <nav className={styles.nav}>
         <Logo />
         <ul className={styles.navUl}>
-          <Link to="/" end="true">
+          <Link to="/procurar" end="true">
             <li>Procurar</li>
           </Link>
-          <Link to="/Frases">
+          <Link to="/frases">
             <li>Frases</li>
           </Link>
-          <Link to="/Populares">
+          <Link to="/populares">
             <li>Populares</li>
           </Link>
         </ul>
@@ -33,13 +33,13 @@ const Nav = ({ header }) => {
         <div className={styles.containerNav}>
           <h3 className={styles.tituloNav}>NAVEGAÇÃO</h3>
           <ul className={styles.navUl}>
-            <Link to="/" end="true">
+            <Link to="/procurar" end="true">
               <li>Procurar</li>
             </Link>
-            <Link to="/Frases">
+            <Link to="/frases">
               <li>Frases</li>
             </Link>
-            <Link to="/Populares">
+            <Link to="/populares">
               <li>Populares</li>
             </Link>
           </ul>

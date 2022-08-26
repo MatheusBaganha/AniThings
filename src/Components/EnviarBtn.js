@@ -1,8 +1,12 @@
 import React from 'react';
 import styles from './enviarBtn.module.css';
 
-const EnviarBtn = ({ children }) => {
-  return <button className={styles.btnEnviar}>{children}</button>;
+const EnviarBtn = ({ handleSubmit, children, ...props }) => {
+  return (
+    <button onClick={handleSubmit} className={styles.btnEnviar} {...props}>
+      {children}
+    </button>
+  );
 };
 
 export default EnviarBtn;

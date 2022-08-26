@@ -1,0 +1,57 @@
+.containerFeedback {
+  margin: 92px auto 64px auto;
+  max-width: 440px;
+  padding: 16px 0;
+  background-color: #F5F4F4;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, .25);
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, .10);
+  transition: .3s ease-in-out;
+}
+
+.feedbackPergunta {
+  display: block;
+  font-size: 1.4rem;
+  color: #363636;
+  margin: 18px auto auto auto;
+  text-align: center;
+}
+
+.feedback {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin: 18px;
+}
+
+.feedbackPositivo {
+  color: #60c166;
+}
+
+.feedbackNegativo {
+  font-size: 1rem;
+  color: #363636;
+}
+
+.feedbackNegativo b {
+  color: #60c166;
+  cursor: pointer;
+}
+
+.feedbackNegativo b:hover {
+  color: #3F9549;
+  transition: .1s ease-in-out;
+}
+
+.containerBtns {
+  max-width: max-content;
+  margin: 0 auto;
+  display: block;
+}
+
+.containerBtns * {
+  margin: 18px auto;
+}
+
+
+

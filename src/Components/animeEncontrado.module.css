@@ -1,0 +1,31 @@
+.containerGeral {
+  margin: 0 36px;
+  /* width: 80vw; */
+}
+
+.containerEncontrado {
+  max-width: max-content;
+  background-color: #F5F4F4;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, .25);
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, .10);
+}
+
+.tituloEncontrado {
+  font-size: 2.25rem;
+  color: #363636;
+  position: relative;
+}
+
+.tituloEncontrado:after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 4px;
+  border-radius: 3px;
+  background-color: #22455A;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+}
+

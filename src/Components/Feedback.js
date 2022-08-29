@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import Button from './Button';
 import styles from './feedback.module.css';
 import { useNavigate } from 'react-router-dom';

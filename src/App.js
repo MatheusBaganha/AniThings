@@ -6,14 +6,14 @@ import Header from './Components/Header';
 import Populares from './Components/Populares';
 import Footer from './Components/Footer';
 import Home from './Components/Home';
-import { EncontradoContext } from './Components/EncontradoContext';
+import { AppContext } from './Components/Context';
 import AnimeEncontrado from './Components/AnimeEncontrado';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Header />
-      <EncontradoContext>
+      <AppContext>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/procurar" end element={<Procurar />} />
@@ -25,7 +25,7 @@ const App = () => {
             element={<div>Não encontrada. Pagina temporaria</div>}
           />
         </Routes>
-      </EncontradoContext>
+      </AppContext>
       <Footer />
     </BrowserRouter>
   );

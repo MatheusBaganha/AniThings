@@ -1,10 +1,12 @@
 .containerGeral {
-  margin: 0 36px;
+  margin: 0 42px;
   /* width: 80vw; */
 }
 
 .containerEncontrado {
-  max-width: max-content;
+  max-width: 426px;
+  padding: 32px;
+  margin-top: 36px;
   background-color: #F5F4F4;
   box-shadow: 0 6px 6px rgba(0, 0, 0, .25);
   border-radius: 5px;
@@ -29,3 +31,28 @@
   bottom: -10px;
 }
 
+.subtitulo {
+  font-size: 1.25rem;
+  color: #787878;
+}
+
+.linha {
+  content: '';
+  display: block;
+  background-color: #E5E2E2;
+  width: 100%;
+  height: 2px;
+  margin: 36px 0;
+}
+
+.nomeDoAnime {
+  font-size: 1.75rem;
+  font-style: normal;
+  color: #363636;
+}
+
+.similiaridade {
+  font-size: 1.25rem;
+  color: #787878;
+  margin-top: 12px;
+}

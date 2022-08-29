@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import useFetch from '../Hooks/useFetch';
 import { UPLOAD_IMAGE } from './api';
 
-export const ContextEncontrado = React.createContext({});
+export const Context = React.createContext({});
 
-export const EncontradoContext = ({ children }) => {
+export const AppContext = ({ children }) => {
   const { request, data, loading, error } = useFetch();
-  const imageAPI = data ? [data.result[0].image] : '';
+  const videoAPI = data ? [data.result[0].video] + '&size=l' : '';
   const [selectedImg, setSelectedImg] = React.useState();
   const [preview, setPreview] = React.useState();
   const navigate = useNavigate();
@@ -40,25 +40,26 @@ export const EncontradoContext = ({ children }) => {
     formData.append('image', selectedImg);
     const { url, options } = UPLOAD_IMAGE(formData);
     const { response, json } = await request(url, options);
+    const urlWithAnimeName = json.result[0].anilist.title.english;
     console.log(response);
     console.log(json);
     if (response.ok) {
-      navigate(`/procurar/${json.result[0].anilist}`);
+      navigate(`/procurar/${urlWithAnimeName}`);
     }
   }
   return (
-    <ContextEncontrado.Provider
+    <Context.Provider
       value={{
         data,
         loading,
         error,
         preview,
-        imageAPI,
+        videoAPI,
         handleUploadImage,
         handleFileChange,
       }}
     >
       {children}
-    </ContextEncontrado.Provider>
+    </Context.Provider>
   );
 };

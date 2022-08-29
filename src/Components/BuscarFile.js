@@ -1,15 +1,14 @@
 import React from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import useFetch from '../Hooks/useFetch';
-// import { UPLOAD_IMAGE } from './api';
-import { ContextEncontrado } from './EncontradoContext';
+import DicaPagina from './DicaPagina';
 import EnviarBtn from './EnviarBtn';
 import Input from './Input';
 import styles from './input.module.css';
+import stylesPrevia from './previa.module.css';
 import Previa from './Previa';
+import { Context } from './Context';
 
 const BuscarFile = ({ ativo, placeholder }) => {
-  const context = React.useContext(ContextEncontrado);
+  const context = React.useContext(Context);
   console.log(context);
 
   return (
@@ -33,9 +32,22 @@ const BuscarFile = ({ ativo, placeholder }) => {
         )}
       </div>
       {context.preview && (
-        <Previa imagem={context.preview} /*onError={onError}*/ />
+        <div className={stylesPrevia.containerPrevia}>
+          <DicaPagina
+            style={{
+              textAlign: 'start',
+              paddingRight: '48px',
+              marginTop: '48px',
+            }}
+          >
+            Prévia da imagem:
+          </DicaPagina>
+          {context.preview && (
+            <Previa imagem={context.preview} /*onError={onError}*/ />
+          )}
+          {context.error ? <p>Ocorreu um erro. Tente novamente.</p> : ''}
+        </div>
       )}
-      {context.error ? <p>Ocorreu um erro. Tente novamente.</p> : ''}
     </>
   );
 };

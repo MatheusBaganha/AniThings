@@ -1,32 +1,37 @@
 import React from 'react';
-import DicaPagina from './DicaPagina';
 import styles from './previa.module.css';
 
-const Previa = ({ imagem, onError }) => {
+const Previa = ({ imagem, onError, video }) => {
   if (imagem) {
     return (
-      <div className={styles.containerPrevia}>
-        <DicaPagina
-          style={{
-            textAlign: 'start',
-            paddingRight: '48px',
-            marginTop: '48px',
-          }}
+      <div className={styles.imgContainer}>
+        <img
+          onError={onError}
+          className={styles.img}
+          src={imagem}
+          alt="Prévia da imagem selecionada"
+        />
+      </div>
+    );
+  }
+  if ((imagem === null || undefined) && video) {
+    return (
+      <div className={styles.imgContainer}>
+        <video
+          width="360"
+          height="202"
+          className={styles.img}
+          autoPlay
+          loop
+          muted
+          controls
+          style={{ marginBottom: '32px' }}
         >
-          Prévia da imagem:
-        </DicaPagina>
-        <div className={styles.imgContainer}>
-          <img
-            onError={onError}
-            className={styles.img}
-            src={imagem}
-            alt="Prévia da imagem selecionada"
-          />
-        </div>
+          <source src={video} type="video/mp4" />
+        </video>
       </div>
     );
   }
   return null;
 };
-
 export default Previa;

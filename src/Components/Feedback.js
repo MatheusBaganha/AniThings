@@ -2,9 +2,11 @@ import React from 'react';
 import Button from './Button';
 import styles from './feedback.module.css';
 import { useNavigate } from 'react-router-dom';
+import { Context } from './Context';
 
 const Feedback = () => {
   const [animeFound, setAnimeFound] = React.useState(null);
+  const context = React.useContext(Context);
   const navigate = useNavigate();
 
   function handleClick({ target }) {
@@ -18,6 +20,12 @@ const Feedback = () => {
   }
 
   function goBack() {
+    // function cleanContextObjects() {
+    //   for (const obj in context) {
+    //     delete context[obj];
+    //   }
+    // }
+    // cleanContextObjects();
     navigate('/procurar');
   }
 

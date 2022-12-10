@@ -29,7 +29,7 @@ const AnimeEncontrado = () => {
       <h2 className={styles.tituloEncontrado}>Resultado: </h2>
       <article className={styles.containerGeral}>
         <section className={styles.containerEncontrado}>
-          {context.preview && (
+          {context.data && (
             <div>
               <DicaPagina
                 style={{
@@ -69,7 +69,7 @@ const AnimeEncontrado = () => {
             </div>
           )}
         </section>
-        {context.preview && (
+        {context.data && (
           <section className={styles.containerEncontrado}>
             <DicaPagina
               style={{
@@ -85,10 +85,13 @@ const AnimeEncontrado = () => {
             <article className={styles.maisInfo}>
               <p>
                 <b>Anime: </b>
-                <cite>{animeName}</cite>
+                <cite>{animeName ? animeName : 'Não encontrado'}</cite>
               </p>
               <p>
-                <b>Episódio:</b> {episode}
+                <b>Episódio:</b>{' '}
+                {episode
+                  ? episode
+                  : 'Não encontrado. Talvez essa cena se passa em algum filme'}
               </p>
               <p>
                 <b>Minuto: </b>

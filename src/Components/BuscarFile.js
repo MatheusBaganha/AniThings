@@ -9,7 +9,6 @@ import { Context } from './Context';
 
 const BuscarFile = ({ ativo, placeholder }) => {
   const context = React.useContext(Context);
-  console.log(context);
 
   return (
     <>
@@ -18,7 +17,6 @@ const BuscarFile = ({ ativo, placeholder }) => {
           <Input
             type="file"
             accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/webp"
-            // onChange={handleChange}
             onChange={context.handleFileChange}
             name={'image'}
             required

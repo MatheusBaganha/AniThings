@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useFetch from '../Hooks/useFetch';
-import { UPLOAD_IMAGE } from './api';
+import { SEARCH_IMAGE_BY_URL, UPLOAD_IMAGE } from './api';
 
 export const Context = React.createContext({});
 
@@ -12,6 +12,7 @@ export const AppContext = ({ children }) => {
   const [preview, setPreview] = React.useState();
   const navigate = useNavigate();
 
+  console.log(error);
   React.useEffect(() => {
     if (!selectedImg) {
       setPreview(undefined);
@@ -40,13 +41,30 @@ export const AppContext = ({ children }) => {
     formData.append('image', selectedImg);
     const { url, options } = UPLOAD_IMAGE(formData);
     const { response, json } = await request(url, options);
-    const urlWithAnimeName = json.result[0].anilist.title.english;
+
     console.log(response);
     console.log(json);
     if (response.ok) {
-      navigate(`/procurar/${urlWithAnimeName}`);
+      navigate(`/procurar/animeEncontrado`);
     }
   }
+
+  async function handleSearchByUrlImage(e, urlImage) {
+    e.preventDefault();
+    setPreview(urlImage);
+    const { url } = SEARCH_IMAGE_BY_URL(urlImage);
+
+    const { response } = await request(url);
+    if (response.ok) {
+      navigate(`/procurar/animeEncontrado}`);
+    }
+  }
+
+  function cleanStates() {
+    setPreview(null);
+    setSelectedImg(null);
+  }
+
   return (
     <Context.Provider
       value={{
@@ -55,8 +73,10 @@ export const AppContext = ({ children }) => {
         error,
         preview,
         videoAPI,
+        handleSearchByUrlImage,
         handleUploadImage,
         handleFileChange,
+        cleanStates,
       }}
     >
       {children}

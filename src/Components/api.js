@@ -9,3 +9,9 @@ export function UPLOAD_IMAGE(formData) {
     },
   };
 }
+
+export function SEARCH_IMAGE_BY_URL(urlImage) {
+  return {
+    url: API_URL + `?anilistInfo&url=${encodeURIComponent(urlImage)}`,
+  };
+}

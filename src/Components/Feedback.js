@@ -20,12 +20,7 @@ const Feedback = () => {
   }
 
   function goBack() {
-    // function cleanContextObjects() {
-    //   for (const obj in context) {
-    //     delete context[obj];
-    //   }
-    // }
-    // cleanContextObjects();
+    context.cleanStates();
     navigate('/procurar');
   }
 

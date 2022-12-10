@@ -25,10 +25,10 @@ const Procurar = () => {
         Iremos encontrar para você!
       </TituloPagina>
       {Procurar && ativo && (
-        <DicaPagina>Formatos suportados: jpeg | png | webp</DicaPagina>
+        <DicaPagina>Coloque a URL da imagem no campo abaixo.</DicaPagina>
       )}
       {Procurar && !ativo && (
-        <DicaPagina>Coloque a URL da imagem no campo abaixo.</DicaPagina>
+        <DicaPagina>Formatos suportados: jpeg | png | webp</DicaPagina>
       )}
       <form>
         <div className={styles.containerButtons}>

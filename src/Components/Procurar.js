@@ -24,11 +24,11 @@ const Procurar = () => {
         <br />
         Iremos encontrar para você!
       </TituloPagina>
-      {Procurar && ativo && (
+      {Procurar && !ativo && (
         <DicaPagina>Coloque a URL da imagem no campo abaixo.</DicaPagina>
       )}
-      {Procurar && !ativo && (
-        <DicaPagina>Formatos suportados: jpeg | png | webp</DicaPagina>
+      {Procurar && ativo && (
+        <DicaPagina>Formatos suportados: jpeg | png | webp | gif</DicaPagina>
       )}
       <form>
         <div className={styles.containerButtons}>

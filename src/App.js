@@ -15,12 +15,9 @@ const App = () => {
       <Header />
       <AppContext>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/procurar" end element={<Procurar />} />
-          <Route
-            path="/procurar/animeEncontrado"
-            element={<AnimeEncontrado />}
-          />
+          <Route path="/" end element={<Home />} />
+          <Route path="/procurar" element={<Procurar />} />
+          <Route path="/animeEncontrado" element={<AnimeEncontrado />} />
           <Route path="/frases" element={<Frases />} />
           <Route path="/populares" element={<Populares />} />
           <Route

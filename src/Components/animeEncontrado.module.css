@@ -5,7 +5,7 @@
   flex: 1 1 auto;
   gap: 64px;
   margin: 0 42px;
-  /* width: 80vw; */
+  width: 93vw;
 }
 
 .containerEncontrado {
@@ -63,8 +63,13 @@
   margin-top: 12px;
 }
 
+.maisInfo {
+  min-width: 426px;
+}
+
 .maisInfo p {
   font-size: 1.1rem;
   margin-bottom: 16px;
   color: #363636;
+  max-width: 40ch;
 }

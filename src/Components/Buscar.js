@@ -21,18 +21,12 @@ const Buscar = ({ ativo, type, placeholder }) => {
     const isURL =
       /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
 
-    if (url.match(isURL)) {
+    if (url.length > 0 && url.match(isURL)) {
       setUrlWrote(url);
-    }
-
-    if (url.length > 0) {
+    } else {
       setInvalidURL(true);
     }
   }
-
-  // function onError() {
-  //   setUrlWrote('URL da imagem de erro');
-  // }
 
   return (
     <div ativo={ativo} className={styles.containerBuscar}>
@@ -55,10 +49,12 @@ const Buscar = ({ ativo, type, placeholder }) => {
         </EnviarBtn>
       )}
 
-      {urlWrote && <Previa imagem={urlWrote} /*onError={onError}*/ />}
-      {invalidURL && <p style={{ marginTop: '36px' }}>URL inválida.</p>}
-      {context.error ? <p>Ocorreu um erro. Tente novamente.</p> : ''}
-      {/* mensagem de erro nao funcionas */}
+      {urlWrote && <Previa imagem={urlWrote} />}
+      {invalidURL ? (
+        <p style={{ marginTop: '36px' }}>Ocorreu um erro. URL inválida.</p>
+      ) : (
+        ''
+      )}
     </div>
   );
 };

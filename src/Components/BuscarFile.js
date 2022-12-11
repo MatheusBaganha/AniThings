@@ -16,7 +16,7 @@ const BuscarFile = ({ ativo, placeholder }) => {
         <label className={styles.label}>
           <Input
             type="file"
-            accept="image/apng, image/avif, image/gif, image/jpeg, image/png, image/svg+xml, image/webp"
+            accept="image/gif, image/jpeg, image/png, image/webp"
             onChange={context.handleFileChange}
             name={'image'}
             required
@@ -40,10 +40,7 @@ const BuscarFile = ({ ativo, placeholder }) => {
           >
             Prévia da imagem:
           </DicaPagina>
-          {context.preview && (
-            <Previa imagem={context.preview} /*onError={onError}*/ />
-          )}
-          {context.error ? <p>Ocorreu um erro. Tente novamente.</p> : ''}
+          {context.preview && <Previa imagem={context.preview} />}
         </div>
       )}
     </>

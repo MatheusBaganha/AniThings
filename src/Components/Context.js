@@ -12,7 +12,6 @@ export const AppContext = ({ children }) => {
   const [preview, setPreview] = React.useState();
   const navigate = useNavigate();
 
-  console.log(error);
   React.useEffect(() => {
     if (!selectedImg) {
       setPreview(undefined);
@@ -45,7 +44,7 @@ export const AppContext = ({ children }) => {
     console.log(response);
     console.log(json);
     if (response.ok) {
-      navigate(`/procurar/animeEncontrado`);
+      navigate(`/animeEncontrado`);
     }
   }
 
@@ -53,10 +52,11 @@ export const AppContext = ({ children }) => {
     e.preventDefault();
     setPreview(urlImage);
     const { url } = SEARCH_IMAGE_BY_URL(urlImage);
-
-    const { response } = await request(url);
+    const { response, json } = await request(url);
+    console.log(json);
+    console.log(response);
     if (response.ok) {
-      navigate(`/procurar/animeEncontrado}`);
+      navigate(`/animeEncontrado`);
     }
   }
 

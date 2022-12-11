@@ -1,12 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
+import useWindowDimensions from '../Hooks/useWindowDimensions';
 import styles from './nav.module.css';
 
 const Nav = ({ header }) => {
+  const [isMobile, setIsMobile] = React.useState(false);
+  const { width } = useWindowDimensions();
+  const navRef = React.useRef();
+
+  React.useEffect(() => {
+    if (width < 750) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, [width]);
+
+  function handleClick(e) {
+    e.preventDefault();
+    navRef.current.classList.toggle('aberto');
+  }
+
   if (header) {
     return (
-      <nav className={styles.nav}>
+      <nav ref={navRef} className={styles.nav}>
+        {isMobile && (
+          <button
+            onClick={handleClick}
+            className={styles.menuMobileBtn}
+          ></button>
+        )}
         <Logo />
         <ul className={styles.navUl}>
           <Link to="/procurar" end="true">

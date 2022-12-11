@@ -4,6 +4,7 @@
   text-align: center;
   margin-top: 128px;
   color: #363636;
+  font-weight: 600;
   position: relative;
 }
 
@@ -15,6 +16,13 @@
   border-radius: 3px;
   background-color: #22455A;
   position: absolute;
-  left: 50%;
+  left: 48%;
   bottom: -28px;
+}
+
+@media(max-width: 970px) {
+  .titulo {
+    font-size: 1.4rem;
+    margin-top: 92px;
+  }
 }

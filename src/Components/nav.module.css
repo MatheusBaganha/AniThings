@@ -31,6 +31,95 @@
   color: #BDBDBD;
 }
 
+@media(max-width: 750px) {
+  .header {
+    padding: 32px 36px;
+    position: relative;
+  }
+  
+  .header .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header .navUl {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    left: 0px;
+    top: 96px;
+    z-index: 2;
+    background-color: #22455A;
+    width: 100vw;
+    height: 0;
+    transition: .6s ease-in-out;
+    visibility: hidden;
+    overflow: hidden;
+  }
+
+  .header .nav:global(.aberto) .navUl {
+    height: 35vh;
+    visibility: visible;
+    overflow-y: auto;
+  }
+  
+  .header .navUl li {
+    display: block;
+    width: 88vw;
+    font-size: 1.125rem;
+    position: relative;
+    left: 42px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+  }
+
+  .header .menuMobileBtn {
+    display: block;
+    height: 32px;
+    width: 32px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-top: 3px solid #F5F4F4;
+    position: absolute;
+    right: 36px;
+    top: 36px;
+    border-radius: 1px;
+    cursor: pointer;
+  }
+
+  .menuMobileBtn::before, .menuMobileBtn::after {
+    display: block;
+    content: '';
+    background-color: #F5F4F4;
+    height: 3px;
+    width: 100%;
+    border-radius: 1px;
+    margin: 7px 0px;
+    transition: .3s ease;
+    position: relative;
+  }
+
+  .nav:global(.aberto) .menuMobileBtn {
+    border-top-color: transparent;
+  }
+
+  .nav:global(.aberto) .menuMobileBtn::before {
+    transform: rotate(135deg);
+  }
+
+  .nav:global(.aberto) .menuMobileBtn::after {
+    transform: rotate(-135deg);
+    top: -9px;
+  }
+
+ 
+  
+}
+
 /* Footer */
 
 .footer {
@@ -46,7 +135,6 @@ footer .nav {
   gap: 128px;
   margin-top: 32px;
 }
-
 
 .logo {
   margin-top: -5px;
@@ -84,5 +172,51 @@ footer .nav {
 
 .tituloNav {
   color: #F5F4F4;
+  font-weight: 600;
   margin-bottom: 24px;
+}
+
+@media(max-width: 1045px) {
+  .logo {
+    margin-right: 0px;
+  }
+}
+
+@media(max-width: 900px) {
+  .logo {
+    margin-left: -15px;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 92px;
+  }
+  
+  footer .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 64px 0;
+    margin-top: 28px;
+  }
+
+  .containerNav + .containerNav {
+    margin-left: 0;
+  }
+
+  .containerNav {
+    margin-bottom: 32px;
+  }
+
+  .tituloNav {
+    margin-top: -32px;
+  }
+
+  .containerNav::before {
+    top: -32px;
+    height: 132%;
+  }
 }

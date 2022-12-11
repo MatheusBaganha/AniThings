@@ -71,5 +71,10 @@
   font-size: 1.1rem;
   margin-bottom: 16px;
   color: #363636;
-  max-width: 40ch;
+  max-width: 35ch;
+  font-weight: 400;
+}
+
+.maisInfo p b {
+  font-weight: 600;
 }

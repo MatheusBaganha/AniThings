@@ -2,3 +2,16 @@
   width: 183px;
   height: 35px;
 }
+
+.logoContainer img {
+  max-width: 100%;
+  display: block;
+}
+
+@media(max-width: 430px) {
+  .logoContainer {
+    width: 163px;
+    position: relative;
+    top: 3px;
+  }
+}

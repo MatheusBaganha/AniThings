@@ -41,8 +41,6 @@ export const AppContext = ({ children }) => {
     const { url, options } = UPLOAD_IMAGE(formData);
     const { response, json } = await request(url, options);
 
-    console.log(response);
-    console.log(json);
     if (response.ok) {
       navigate(`/animeEncontrado`);
     }
@@ -53,8 +51,7 @@ export const AppContext = ({ children }) => {
     setPreview(urlImage);
     const { url } = SEARCH_IMAGE_BY_URL(urlImage);
     const { response, json } = await request(url);
-    console.log(json);
-    console.log(response);
+
     if (response.ok) {
       navigate(`/animeEncontrado`);
     }

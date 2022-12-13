@@ -70,5 +70,24 @@
   color: #777777;
 }
 
+@media(max-width: 620px) {
+  .input, .label {
+    width: 280px;
+  }
+}
+
+@media(max-width: 430px) {
+  .input, .label {
+    width: 200px;
+  }
+
+  .input::placeholder, .label {
+    font-size: 0.9rem;
+  }
+
+  .label {
+    padding-right: 12px;
+  }
+}
 
 

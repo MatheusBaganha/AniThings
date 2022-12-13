@@ -1,5 +1,6 @@
 .containerGeral {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: baseline;
   flex: 1 1 auto;
@@ -11,35 +12,12 @@
 .containerEncontrado {
   max-width: 426px;
   padding: 32px;
-  margin-top: 36px;
+  margin-top: 12px;
   background-color: #F5F4F4;
   box-shadow: 0 6px 6px rgba(0, 0, 0, .25);
   border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, .10);
-}
-
-.tituloEncontrado {
-  font-size: 2.25rem;
-  color: #363636;
   position: relative;
-  margin-left: 220px;
-}
-
-.tituloEncontrado:after {
-  content: '';
-  display: block;
-  width: 64px;
-  height: 4px;
-  border-radius: 3px;
-  background-color: #22455A;
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-}
-
-.subtitulo {
-  font-size: 1.25rem;
-  color: #787878;
+  border: 1px solid rgba(0, 0, 0, .10);
 }
 
 .linha {
@@ -48,12 +26,13 @@
   background-color: #E5E2E2;
   width: 100%;
   height: 2px;
-  margin: 36px 0;
+  margin: 36px 0 28px 0;
 }
 
 .nomeDoAnime {
   font-size: 1.75rem;
   font-style: normal;
+  font-weight: 600;
   color: #363636;
 }
 
@@ -64,10 +43,11 @@
 }
 
 .maisInfo {
-  min-width: 426px;
+  max-width: 426px;
 }
 
-.maisInfo p {
+.maisInfo span {
+  display: block;
   font-size: 1.1rem;
   margin-bottom: 16px;
   color: #363636;
@@ -75,6 +55,81 @@
   font-weight: 400;
 }
 
-.maisInfo p b {
+.maisInfo span b {
   font-weight: 600;
+}
+
+@media(max-width: 983px) {
+  .containerGeral {
+    align-items: center;
+    margin: 0 auto;
+    width: 80vw;
+  }
+
+  .containerEncontrado {
+    max-width: 445px;
+    width: 80vw;
+    left: -6px;
+  }
+
+  .maisInfo {
+    min-width: 0px;
+  }
+}
+
+@media(max-width: 555px) {
+  .containerGeral {
+    margin: 0 auto;
+  }
+
+  .maisInfo span {
+    font-size: 1.1rem;
+  }
+}
+
+@media(max-width: 480px) {
+  .maisInfo span {
+    max-width: 30ch;
+  }
+}
+
+@media(max-width: 430px) {
+  .containerGeral {
+    margin: 0 auto;
+    width: 80vw;
+  }
+
+  .containerEncontrado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 300px;
+    left: -6px;
+    padding: 32px 18px;
+  }
+
+  .maisInfo {
+    max-width: 280px;
+    padding: 6px;
+  }
+  
+  .maisInfo span {
+    min-width: 0;
+    font-size: 0.9rem;
+  }
+ 
+  .nomeDoAnime {
+    font-size: 1.2rem;
+  }
+  
+  .similiaridade {
+    font-size: 1rem;
+  }
+}
+
+@media(max-width: 350px) {
+  .maisInfo span {
+    max-width: 25ch;
+  }
 }

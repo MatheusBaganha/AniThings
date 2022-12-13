@@ -13,3 +13,7 @@ body {
 li:active, a:active {
   text-decoration: none;
 }
+
+video {
+  aspect-ratio: 16 / 9;
+}

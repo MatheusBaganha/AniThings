@@ -36,6 +36,8 @@ const BuscarFile = ({ ativo, placeholder }) => {
               textAlign: 'start',
               paddingRight: '48px',
               marginTop: '48px',
+              position: 'absolute',
+              left: '0px',
             }}
           >
             Prévia da imagem:

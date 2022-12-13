@@ -24,5 +24,21 @@
   .titulo {
     font-size: 1.4rem;
     margin-top: 92px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
+
+@media(max-width: 750px) {
+  .titulo {
+    font-size: 1.2rem;
+  }
+}
+
+@media(max-width: 350px) {
+  .titulo {
+    font-size: 1rem;
+  }
+}
+
+

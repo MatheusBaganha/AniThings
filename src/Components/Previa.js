@@ -18,8 +18,6 @@ const Previa = ({ imagem, onError, video }) => {
     return (
       <div className={styles.imgContainer}>
         <video
-          width="360"
-          height="202"
           className={styles.img}
           autoPlay
           loop

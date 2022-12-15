@@ -59,7 +59,7 @@ const Buscar = ({ ativo, type, placeholder }) => {
       )}
 
       {urlWrote && (
-        <div className={stylesPrevia.containerPrevia}>
+        <div className={stylesPrevia.containerPreviaUrl}>
           <DicaPagina
             style={{
               textAlign: 'start',

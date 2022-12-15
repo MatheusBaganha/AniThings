@@ -30,7 +30,7 @@ const BuscarFile = ({ ativo, placeholder }) => {
         )}
       </div>
       {context.preview && (
-        <div className={stylesPrevia.containerPrevia}>
+        <div className={stylesPrevia.containerPreviaUrl}>
           <DicaPagina
             style={{
               textAlign: 'start',

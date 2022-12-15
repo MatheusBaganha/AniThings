@@ -29,8 +29,8 @@
 
 @media(max-width: 430px) {
   .btnEnviar {
-    width: 70px;
-    font-size: 0.8rem;
+    width: 75px;
+    font-size: 0.7rem;
   }
 }
 

@@ -23,7 +23,7 @@ const BuscarFile = ({ ativo, placeholder }) => {
           />
           {context.preview ? 'Imagem carregada' : placeholder}
         </label>
-        {context.loading ? (
+        {context.preview && context.loading ? (
           <EnviarBtn disabled>ENVIANDO...</EnviarBtn>
         ) : (
           <EnviarBtn handleSubmit={context.handleUploadImage}>ENVIAR</EnviarBtn>
@@ -34,15 +34,17 @@ const BuscarFile = ({ ativo, placeholder }) => {
           <DicaPagina
             style={{
               textAlign: 'start',
-              paddingRight: '48px',
+              paddingRight: '18px',
               marginTop: '48px',
-              position: 'absolute',
-              left: '0px',
+              margin: '48px 0 0 0',
+              width: 'max-content',
             }}
           >
             Prévia da imagem:
           </DicaPagina>
-          {context.preview && <Previa imagem={context.preview} />}
+          {context.preview && (
+            <Previa imagem={context.preview} style={{ marginRight: 0 }} />
+          )}
         </div>
       )}
     </>

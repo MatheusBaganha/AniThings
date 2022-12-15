@@ -1,15 +1,19 @@
 import React from 'react';
 import styles from './input.module.css';
+import stylesPrevia from './previa.module.css';
 import EnviarBtn from './EnviarBtn';
+import DicaPagina from './DicaPagina';
 import Input from './Input';
 import Previa from './Previa';
 import { Context } from './Context';
+import useWindowDimensions from '../Hooks/useWindowDimensions';
 
 const Buscar = ({ ativo, type, placeholder }) => {
   const context = React.useContext(Context);
   const [url, setUrl] = React.useState('');
   const [invalidURL, setInvalidURL] = React.useState(false);
   const [urlWrote, setUrlWrote] = React.useState('');
+  const { width } = useWindowDimensions();
 
   function handleUrlChange({ target }) {
     setInvalidURL(false);
@@ -43,13 +47,33 @@ const Buscar = ({ ativo, type, placeholder }) => {
         <EnviarBtn disabled>ENVIANDO...</EnviarBtn>
       ) : (
         <EnviarBtn
+          style={
+            width < 430
+              ? { position: 'relative', top: '-2px' }
+              : { position: 'static' }
+          }
           handleSubmit={(e) => context.handleSearchByUrlImage(e, urlWrote)}
         >
           ENVIAR
         </EnviarBtn>
       )}
 
-      {urlWrote && <Previa imagem={urlWrote} />}
+      {urlWrote && (
+        <div className={stylesPrevia.containerPrevia}>
+          <DicaPagina
+            style={{
+              textAlign: 'start',
+              paddingRight: '18px',
+              marginTop: '48px',
+              margin: '48px 0 0 0',
+              width: 'max-content',
+            }}
+          >
+            Prévia da imagem:
+          </DicaPagina>{' '}
+          <Previa imagem={urlWrote} />
+        </div>
+      )}
       {invalidURL ? (
         <p style={{ marginTop: '36px' }}>Ocorreu um erro. URL inválida.</p>
       ) : (

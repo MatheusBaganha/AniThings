@@ -2,17 +2,18 @@
   display: block;
   font-size: 1.8rem;
   text-align: center;
-  margin-top: 128px;
   color: #363636;
   font-weight: 600;
   position: relative;
+  max-width: max-content;
+  margin: 128px auto 0 auto;
 }
 
 .titulo::after {
   content: '';
   display: block;
   width: 64px;
-  height: 4px;
+  height: 3px;
   border-radius: 3px;
   background-color: #22455A;
   position: absolute;
@@ -29,12 +30,26 @@
   }
 }
 
+@media(max-width: 850px) {
+  .titulo::after {
+    left: 47%;
+  }
+}
+
 @media(max-width: 750px) {
   .titulo {
     font-size: 1.2rem;
   }
-}
 
+  .titulo::after {
+    left: 45%;
+  }
+}
+@media(max-width: 450px) {
+  .titulo::after {
+    left: 43%;
+  }
+}
 @media(max-width: 350px) {
   .titulo {
     font-size: 1rem;

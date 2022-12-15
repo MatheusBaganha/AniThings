@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './previa.module.css';
 
-const Previa = ({ imagem, onError, video }) => {
+const Previa = ({ imagem, onError, video, ...props }) => {
   if (imagem) {
     return (
-      <div className={styles.imgContainer}>
+      <div className={styles.imgContainer} {...props}>
         <img
           onError={onError}
           className={styles.img}

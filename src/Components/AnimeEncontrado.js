@@ -90,9 +90,9 @@ const AnimeEncontrado = () => {
                 style={{
                   textAlign: 'start',
                   paddingRight: '0px',
-                  marginTop: '0px',
-                  marginBottom: '22px',
+                  margin: '0 0 22px 0',
                   display: 'block',
+                  fontSize: '0.9rem',
                 }}
               >
                 Mais informações:

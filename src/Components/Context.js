@@ -36,24 +36,28 @@ export const AppContext = ({ children }) => {
 
   async function handleUploadImage(e) {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('image', selectedImg);
-    const { url, options } = UPLOAD_IMAGE(formData);
-    const { response, json } = await request(url, options);
+    if (selectedImg) {
+      const formData = new FormData();
+      formData.append('image', selectedImg);
+      const { url, options } = UPLOAD_IMAGE(formData);
+      const { response } = await request(url, options);
 
-    if (response.ok) {
-      navigate(`/animeEncontrado`);
+      if (response.ok) {
+        navigate(`/animeEncontrado`);
+      }
     }
   }
 
   async function handleSearchByUrlImage(e, urlImage) {
     e.preventDefault();
-    setPreview(urlImage);
-    const { url } = SEARCH_IMAGE_BY_URL(urlImage);
-    const { response, json } = await request(url);
+    if (urlImage) {
+      setPreview(urlImage);
+      const { url } = SEARCH_IMAGE_BY_URL(urlImage);
+      const { response } = await request(url);
 
-    if (response.ok) {
-      navigate(`/animeEncontrado`);
+      if (response.ok) {
+        navigate(`/animeEncontrado`);
+      }
     }
   }
 

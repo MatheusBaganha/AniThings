@@ -44,6 +44,7 @@ export const ContextBuscarFrases = () => {
 
   async function handleSearchQuote(e) {
     console.log(e);
+    // Atualiza sozinho estado e volta pro Anime quando usa o enter
     if (e.type === 'click') e.preventDefault();
     if (anime) {
       const { url } = FIND_QUOTE_BY_ANIME_NAME(value);

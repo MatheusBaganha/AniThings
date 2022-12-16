@@ -2,12 +2,12 @@ import React from 'react';
 import styles from './animeEncontrado.module.css';
 import Feedback from './Feedback';
 import Previa from './Previa';
-import { Context } from './Context';
+import { EncontrarAnimeContext } from './ContextEncontrarAnime';
 import DicaPagina from './DicaPagina';
 import { useNavigate } from 'react-router-dom';
 
 const AnimeEncontrado = () => {
-  const context = React.useContext(Context);
+  const context = React.useContext(EncontrarAnimeContext);
   const navigate = useNavigate();
 
   React.useEffect(() => {

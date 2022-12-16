@@ -1,5 +1,5 @@
 import React from 'react';
-import Buscar from './Buscar';
+import Buscar from './BuscarUrl';
 import BuscarFile from './BuscarFile';
 import Button from './Button';
 import DicaPagina from './DicaPagina';
@@ -9,16 +9,12 @@ import TituloPagina from './TituloPagina';
 const Procurar = () => {
   const [ativo, setAtivo] = React.useState(true);
 
-  React.useEffect(() => {
-    return;
-  }, [ativo]);
-
   function handleClick() {
     setAtivo((ativo) => !ativo);
   }
 
   return (
-    <main className={styles.main}>
+    <main>
       <TituloPagina>
         Nos envie uma imagem contendo a cena do anime que procura
         <br />

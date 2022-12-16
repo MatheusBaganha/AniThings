@@ -1,11 +1,11 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import useFetch from '../Hooks/useFetch';
 import { SEARCH_IMAGE_BY_URL, UPLOAD_IMAGE } from './api';
 
-export const Context = React.createContext({});
+export const EncontrarAnimeContext = React.createContext({});
 
-export const AppContext = ({ children }) => {
+export const ContextEncontrarAnime = () => {
   const { request, data, loading, error } = useFetch();
   const videoAPI = data ? [data.result[0].video] + '&size=l' : '';
   const [selectedImg, setSelectedImg] = React.useState();
@@ -67,7 +67,7 @@ export const AppContext = ({ children }) => {
   }
 
   return (
-    <Context.Provider
+    <EncontrarAnimeContext.Provider
       value={{
         data,
         loading,
@@ -80,7 +80,7 @@ export const AppContext = ({ children }) => {
         cleanStates,
       }}
     >
-      {children}
-    </Context.Provider>
+      {<Outlet />}
+    </EncontrarAnimeContext.Provider>
   );
 };

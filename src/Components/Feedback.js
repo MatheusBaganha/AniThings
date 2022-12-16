@@ -2,11 +2,11 @@ import React from 'react';
 import Button from './Button';
 import styles from './feedback.module.css';
 import { useNavigate } from 'react-router-dom';
-import { Context } from './Context';
+import { EncontrarAnimeContext } from './ContextEncontrarAnime';
 
 const Feedback = () => {
   const [animeFound, setAnimeFound] = React.useState(null);
-  const context = React.useContext(Context);
+  const context = React.useContext(EncontrarAnimeContext);
   const navigate = useNavigate();
 
   function handleClick({ target }) {

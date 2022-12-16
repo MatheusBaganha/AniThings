@@ -5,11 +5,11 @@ import EnviarBtn from './EnviarBtn';
 import DicaPagina from './DicaPagina';
 import Input from './Input';
 import Previa from './Previa';
-import { Context } from './Context';
+import { EncontrarAnimeContext } from './ContextEncontrarAnime';
 import useWindowDimensions from '../Hooks/useWindowDimensions';
 
 const Buscar = ({ ativo, type, placeholder }) => {
-  const context = React.useContext(Context);
+  const context = React.useContext(EncontrarAnimeContext);
   const [url, setUrl] = React.useState('');
   const [invalidURL, setInvalidURL] = React.useState(false);
   const [urlWrote, setUrlWrote] = React.useState('');

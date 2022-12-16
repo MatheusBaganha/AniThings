@@ -22,6 +22,10 @@ const Nav = ({ header }) => {
     navRef.current.classList.toggle('aberto');
   }
 
+  const closeMenuWhenRoute = React.useCallback((e) => {
+    navRef.current.classList.remove('aberto');
+  }, []);
+
   if (header) {
     return (
       <nav ref={navRef} className={styles.nav}>
@@ -34,13 +38,13 @@ const Nav = ({ header }) => {
         <Logo />
         <ul className={styles.navUl}>
           <Link to="/procurar" end="true">
-            <li>Procurar</li>
+            <li onClick={closeMenuWhenRoute}>Procurar</li>
           </Link>
           <Link to="/frases">
-            <li>Frases</li>
+            <li onClick={closeMenuWhenRoute}>Frases</li>
           </Link>
           <Link to="/populares">
-            <li>Populares</li>
+            <li onClick={closeMenuWhenRoute}>Populares</li>
           </Link>
         </ul>
       </nav>

@@ -50,10 +50,3 @@
     left: 43%;
   }
 }
-@media(max-width: 350px) {
-  .titulo {
-    font-size: 1rem;
-  }
-}
-
-

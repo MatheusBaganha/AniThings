@@ -1,0 +1,67 @@
+.containerFrase {
+  display: block;
+  margin: 0 auto;
+  max-width: 566px;
+  padding: 18px;
+  background-color: #F5F4F4;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, .25);
+  border: 1px solid rgba(0, 0, 0, .10);
+  border-radius: 3px;
+}
+
+.containerFrase:first-of-type {
+  margin-top: 92px;
+  margin-bottom: 48px;
+}
+
+.containerFrase + .containerFrase {
+  margin-bottom: 48px;
+}
+
+.nomeAnime {
+  font-size: 1rem;
+  background-color: #CFFFC7;
+  color: #6A6A6A;
+  font-weight: bold;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, .15);
+  border: 1px solid rgba(0, 0, 0, .10);
+  border-radius: 3px;
+  padding: 6px 16px;
+  font-style: italic;
+  position: relative;
+  top: -25px;
+}
+
+.frase, .personagem {
+  font-style: italic;
+  color: #363636;
+}
+
+.frase {
+  font-size: 1.125rem;
+}
+
+.personagem {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 18px;
+}
+
+@media(max-width: 590px) {
+  .containerFrase {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+
+  .containerFrase:first-of-type {
+    margin-top: 72px;
+  }
+
+  .nomeAnime {
+    font-size: 0.8rem;
+    max-width: 280px;
+    padding: 6px 12px;
+    margin-bottom: 18px;
+  }
+
+}

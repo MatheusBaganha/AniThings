@@ -7,8 +7,8 @@ import Header from './Components/Header';
 import Populares from './Components/Populares';
 import Footer from './Components/Footer';
 import Home from './Components/Home';
-import { ContextBuscarFrases } from './Components/ContextBuscarFrases';
-import { ContextEncontrarAnime } from './Components/ContextEncontrarAnime';
+import { ContextBuscarFrases } from './Context/ContextBuscarFrases';
+import { ContextEncontrarAnime } from './Context/ContextEncontrarAnime';
 
 const App = () => {
   return (

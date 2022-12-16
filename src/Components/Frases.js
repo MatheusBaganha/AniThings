@@ -5,7 +5,7 @@ import TituloPagina from './TituloPagina';
 import stylesBtn from './procurar.module.css';
 import styles from './frases.module.css';
 import BuscarFrases from './BuscarFrases';
-import { BuscarFrasesContext } from './ContextBuscarFrases';
+import { BuscarFrasesContext } from '../Context/ContextBuscarFrases';
 
 const Frases = () => {
   const {

@@ -5,7 +5,7 @@ import {
   FIND_QUOTE_BY_ANIME_NAME,
   FIND_QUOTE_BY_CHARACTER_NAME,
   FIND_QUOTE_RANDOM,
-} from './api';
+} from '../Components/api';
 
 export const BuscarFrasesContext = React.createContext({});
 

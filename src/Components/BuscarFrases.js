@@ -2,7 +2,7 @@ import React from 'react';
 import EnviarBtn from './EnviarBtn';
 import stylesInput from './input.module.css';
 import Input from './Input';
-import { BuscarFrasesContext } from './ContextBuscarFrases';
+import { BuscarFrasesContext } from '../Context/ContextBuscarFrases';
 import useWindowDimensions from '../Hooks/useWindowDimensions';
 
 const BuscarFrases = ({ ativo, type, placeholder }) => {

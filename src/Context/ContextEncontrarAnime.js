@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import useFetch from '../Hooks/useFetch';
-import { SEARCH_IMAGE_BY_URL, UPLOAD_IMAGE } from './api';
+import { SEARCH_IMAGE_BY_URL, UPLOAD_IMAGE } from '../Components/api';
 
 export const EncontrarAnimeContext = React.createContext({});
 

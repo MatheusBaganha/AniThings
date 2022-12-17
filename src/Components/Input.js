@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './input.module.css';
 
-const Input = ({ value, onChange, onBlur, onKeyUp, name, ...props }) => {
+const Input = ({ value, onChange, onBlur, onKeyDown, name, ...props }) => {
   return (
     <input
       className={styles.input}
       value={value}
       onChange={onChange}
+      onKeyDown={onKeyDown}
       onBlur={onBlur}
-      onKeyUp={onKeyUp}
       name={name}
       {...props}
     />

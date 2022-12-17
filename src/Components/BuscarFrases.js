@@ -10,7 +10,7 @@ const BuscarFrases = ({ ativo, type, placeholder }) => {
   const { handleChange, value, loading, handleSearchQuote, random } =
     React.useContext(BuscarFrasesContext);
 
-  function sendToApiByEnterButton(e) {
+  function sendToApiWhenPressEnterButton(e) {
     if (value.length && e.key === 'Enter') {
       handleSearchQuote(e);
     }
@@ -22,8 +22,8 @@ const BuscarFrases = ({ ativo, type, placeholder }) => {
         <Input
           type={type}
           placeholder={placeholder}
-          onKeyUp={sendToApiByEnterButton}
           onChange={handleChange}
+          onKeyDown={sendToApiWhenPressEnterButton}
           value={value}
           required
           disabled={random}

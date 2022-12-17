@@ -14,10 +14,12 @@ export const ContextBuscarFrases = () => {
   const [personagem, setPersonagem] = React.useState(false);
   const [random, setRandom] = React.useState(false);
   const [value, setValue] = React.useState('');
+  const [naoEncontrado, setNaoEncontrado] = React.useState();
 
   const { request, data, loading, error } = useFetch();
 
   function handleChange({ target }) {
+    setNaoEncontrado(false);
     setValue(target.value);
   }
 
@@ -43,26 +45,35 @@ export const ContextBuscarFrases = () => {
     setPersonagem(true);
   }
 
+  function anime404(response) {
+    if (response.ok === false) {
+      setNaoEncontrado(true);
+    }
+  }
+
   async function handleSearchQuote(e) {
-    console.log(e);
-    // Atualiza sozinho estado e volta pro Anime quando usa o enter
-    if (e.type === 'click') e.preventDefault();
+    e.preventDefault();
+    setNaoEncontrado(false);
+
     if (anime) {
       const { url } = FIND_QUOTE_BY_ANIME_NAME(value);
-      const { response, json } = await request(url);
-      console.log(response);
-      console.log(json);
+      const { response } = await request(url);
+      anime404(response);
     }
     if (personagem) {
       const { url } = FIND_QUOTE_BY_CHARACTER_NAME(value);
       const { response, json } = await request(url);
       console.log(response);
+      anime404(response);
+
       console.log(json);
     }
     if (random) {
       const { url } = FIND_QUOTE_RANDOM();
       const { response, json } = await request(url);
       console.log(response);
+      anime404(response);
+
       console.log(json);
     }
   }
@@ -75,6 +86,7 @@ export const ContextBuscarFrases = () => {
         request,
         error,
         handleSearchQuote,
+        naoEncontrado,
         anime,
         personagem,
         random,

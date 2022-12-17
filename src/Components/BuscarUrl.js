@@ -74,11 +74,7 @@ const Buscar = ({ ativo, type, placeholder }) => {
           <Previa imagem={urlWrote} />
         </div>
       )}
-      {invalidURL ? (
-        <p style={{ marginTop: '36px' }}>Ocorreu um erro. URL inválida.</p>
-      ) : (
-        ''
-      )}
+      {invalidURL && <DicaPagina>URL inválida. Tente novamente.</DicaPagina>}
     </div>
   );
 };

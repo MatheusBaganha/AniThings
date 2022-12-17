@@ -6,6 +6,7 @@ import stylesBtn from './procurar.module.css';
 import styles from './frases.module.css';
 import BuscarFrases from './BuscarFrases';
 import { BuscarFrasesContext } from '../Context/ContextBuscarFrases';
+import CopySvg from './CopySvg';
 
 const Frases = () => {
   const {
@@ -16,7 +17,7 @@ const Frases = () => {
     handlePersonagem,
     handleRandom,
     data,
-    error,
+    naoEncontrado,
   } = React.useContext(BuscarFrasesContext);
 
   return (
@@ -75,11 +76,16 @@ const Frases = () => {
                   : item.anime}
               </cite>
               <p className={styles.frase}>"{item.quote}"</p>
-              <p className={styles.personagem}>~{item.character}</p>
+              <div className={styles.containerPersonagemEcopy}>
+                <p className={styles.personagem}>~{item.character}</p>
+                <CopySvg />
+              </div>
             </article>
           );
         })}
-      {error && <p>Não encontramos esse anime :(</p>}
+      {naoEncontrado && (
+        <DicaPagina>Não encontramos nada com esse nome :(</DicaPagina>
+      )}
     </section>
   );
 };

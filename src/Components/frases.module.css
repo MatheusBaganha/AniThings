@@ -47,6 +47,13 @@
   margin-top: 18px;
 }
 
+
+.containerPersonagemEcopy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media(max-width: 590px) {
   .containerFrase {
     margin-left: 18px;

@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './Button';
 import styles from './feedback.module.css';
 import { useNavigate } from 'react-router-dom';
-import { EncontrarAnimeContext } from './ContextEncontrarAnime';
+import { EncontrarAnimeContext } from '../Context/ContextEncontrarAnime';
 
 const Feedback = () => {
   const [animeFound, setAnimeFound] = React.useState(null);

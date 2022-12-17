@@ -9,7 +9,7 @@ import Footer from './Components/Footer';
 import Home from './Components/Home';
 import { ContextBuscarFrases } from './Context/ContextBuscarFrases';
 import { ContextEncontrarAnime } from './Context/ContextEncontrarAnime';
-//TESTEEEE
+
 const App = () => {
   return (
     <BrowserRouter>

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './animeEncontrado.module.css';
 import Feedback from './Feedback';
 import Previa from './Previa';
-import { EncontrarAnimeContext } from './ContextEncontrarAnime';
+import { EncontrarAnimeContext } from '../Context/ContextEncontrarAnime';
 import DicaPagina from './DicaPagina';
 import { useNavigate } from 'react-router-dom';
 

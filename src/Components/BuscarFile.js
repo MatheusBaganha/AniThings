@@ -5,7 +5,7 @@ import Input from './Input';
 import styles from './input.module.css';
 import stylesPrevia from './previa.module.css';
 import Previa from './Previa';
-import { EncontrarAnimeContext } from './ContextEncontrarAnime';
+import { EncontrarAnimeContext } from '../Context/ContextEncontrarAnime';
 
 const BuscarFile = ({ ativo, placeholder }) => {
   const context = React.useContext(EncontrarAnimeContext);

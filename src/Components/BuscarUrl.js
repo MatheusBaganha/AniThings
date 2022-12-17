@@ -5,7 +5,7 @@ import EnviarBtn from './EnviarBtn';
 import DicaPagina from './DicaPagina';
 import Input from './Input';
 import Previa from './Previa';
-import { EncontrarAnimeContext } from './ContextEncontrarAnime';
+import { EncontrarAnimeContext } from '../Context/ContextEncontrarAnime';
 import useWindowDimensions from '../Hooks/useWindowDimensions';
 
 const Buscar = ({ ativo, type, placeholder }) => {

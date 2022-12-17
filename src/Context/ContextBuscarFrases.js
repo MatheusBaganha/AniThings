@@ -30,6 +30,7 @@ export const ContextBuscarFrases = () => {
 
   function handleRandom(e) {
     e.preventDefault();
+    setValue('');
     setPersonagem(false);
     setAnime(false);
     setRandom(true);

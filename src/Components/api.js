@@ -24,14 +24,14 @@ export function FIND_QUOTE_RANDOM() {
   };
 }
 
-export function FIND_QUOTE_BY_ANIME_NAME(value, page) {
+export function FIND_QUOTE_BY_ANIME_NAME(animeName, page) {
   return {
-    url: API_URL_ANIME_CHAN + `/anime?title=${value}&page=${page}`,
+    url: API_URL_ANIME_CHAN + `/anime?title=${animeName}&page=${page}`,
   };
 }
 
-export function FIND_QUOTE_BY_CHARACTER_NAME(value, page) {
+export function FIND_QUOTE_BY_CHARACTER_NAME(characterName, page) {
   return {
-    url: API_URL_ANIME_CHAN + `/character?name=${value}&page=${page}`,
+    url: API_URL_ANIME_CHAN + `/character?name=${characterName}&page=${page}`,
   };
 }

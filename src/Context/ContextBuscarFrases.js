@@ -21,7 +21,8 @@ export const ContextBuscarFrases = () => {
 
   function handleChange({ target }) {
     setNaoEncontrado(false);
-    setValue(target.value);
+    const animeOrCharacterName = target.value.trim();
+    setValue(animeOrCharacterName);
   }
 
   function handleAnime(e) {

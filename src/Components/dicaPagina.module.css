@@ -6,8 +6,6 @@
 
 @media(max-width: 430px) {
   .dica {
-    position: relative;
-    left: 5px;
     font-size: 0.8rem;
   }
 }

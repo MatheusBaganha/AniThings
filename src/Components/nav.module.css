@@ -115,9 +115,6 @@
     transform: rotate(-135deg);
     top: -9px;
   }
-
- 
-  
 }
 
 /* Footer */
@@ -126,7 +123,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: 128px;
+  margin-top: 64px;
 }
 
 footer .nav {
@@ -192,7 +189,6 @@ footer .nav {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-top: 92px;
   }
   
   footer .nav {

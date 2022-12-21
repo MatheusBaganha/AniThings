@@ -30,7 +30,16 @@ const BuscarFrases = ({ ativo, type, placeholder }) => {
         />
 
         {loading ? (
-          <EnviarBtn disabled>ENVIANDO...</EnviarBtn>
+          <EnviarBtn
+            style={
+              width < 430
+                ? { position: 'relative', top: '-2px' }
+                : { position: 'static' }
+            }
+            disabled
+          >
+            ENVIANDO...
+          </EnviarBtn>
         ) : (
           <EnviarBtn
             style={

@@ -9,6 +9,7 @@ import { BuscarFrasesContext } from '../Context/ContextBuscarFrases';
 import CopySvg from './CopySvg';
 
 const Frases = () => {
+  const [mounted, setMounted] = React.useState(true);
   const {
     anime,
     personagem,
@@ -22,31 +23,29 @@ const Frases = () => {
     setPage,
     naoEncontrado,
     requestsQuotes,
+    goTop,
   } = React.useContext(BuscarFrasesContext);
 
   React.useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    if (mounted) {
+      setMounted(false);
+      return;
+    }
+
+    goTop();
+    requestsQuotes(page);
   }, [page]);
 
   function previousButton() {
-    if (page > 0) {
-      setPage((page) => page - 1);
-      setTimeout(() => {
-        requestsQuotes(page);
-      }, 200);
-    }
-    return null;
+    if (page === 0) return;
+    const newPage = page - 1;
+    setPage(newPage);
   }
 
   function nextButton() {
     if (data && Array.isArray(data)) {
-      setPage((page) => page + 1);
-      setTimeout(() => {
-        requestsQuotes(page);
-      }, 200);
+      const newPage = page + 1;
+      setPage(newPage);
     }
     return null;
   }
@@ -132,9 +131,13 @@ const Frases = () => {
 
       {loading && <DicaPagina>Carregando...</DicaPagina>}
       {naoEncontrado && (
-        <DicaPagina>
-          Acabaram as frases desse anime/personagem. Ou... você fez requisições
-          demais. Por favor, aguarde 1 hora e tente novamente.
+        <DicaPagina
+          style={{ paddingRight: '8px', paddingLeft: '8px', lineHeight: 1.7 }}
+        >
+          Nada por aqui :( <br /> Três coisas podem ter ocorrido: <br />
+          <br /> 1 - Acabaram as frases desse anime/personagem. <br /> 2 - Não
+          existe nenhuma frase com esse anime/personagem na API. <br /> 3 - Você
+          fez requisições demais. Por favor, aguarde 1 hora e tente novamente.
         </DicaPagina>
       )}
       {data && data.error && (

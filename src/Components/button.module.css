@@ -45,6 +45,8 @@
 .paginacao {
   border: 1px solid #cacaca;
   border-radius: 2px;
+  position: relative;
+  top: -28px;
 }
 
 @media(max-width: 450px) {

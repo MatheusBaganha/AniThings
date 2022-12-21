@@ -101,6 +101,13 @@ export const ContextBuscarFrases = () => {
     }
   }
 
+  function goTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
   return (
     <BuscarFrasesContext.Provider
       value={{
@@ -122,6 +129,7 @@ export const ContextBuscarFrases = () => {
         requestsQuotes,
         page,
         setPage,
+        goTop,
       }}
     >
       {<Outlet />}

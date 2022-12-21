@@ -36,11 +36,15 @@
   background-color: #60c166;
 }
 
-
 .buttonFrases {
   border-radius: 10px;
   height: 42px;
   width: 130px;
+}
+
+.paginacao {
+  border: 1px solid #cacaca;
+  border-radius: 2px;
 }
 
 @media(max-width: 450px) {

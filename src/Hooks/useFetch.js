@@ -27,6 +27,7 @@ const useFetch = () => {
 
   return {
     data,
+    setData,
     error,
     loading,
     request,

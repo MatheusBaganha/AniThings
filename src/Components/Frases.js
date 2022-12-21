@@ -17,8 +17,39 @@ const Frases = () => {
     handlePersonagem,
     handleRandom,
     data,
+    loading,
+    page,
+    setPage,
     naoEncontrado,
+    requestsQuotes,
   } = React.useContext(BuscarFrasesContext);
+
+  React.useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, [page]);
+
+  function previousButton() {
+    if (page > 0) {
+      setPage((page) => page - 1);
+      setTimeout(() => {
+        requestsQuotes(page);
+      }, 200);
+    }
+    return null;
+  }
+
+  function nextButton() {
+    if (data && Array.isArray(data)) {
+      setPage((page) => page + 1);
+      setTimeout(() => {
+        requestsQuotes(page);
+      }, 200);
+    }
+    return null;
+  }
 
   return (
     <section>
@@ -31,8 +62,7 @@ const Frases = () => {
           paddingRight: '12px',
         }}
       >
-        Também temos mostrar frases de maneira aleátoria, basta clicar no
-        “random”.
+        Para mostrar frases de maneira aleátoria, basta clicar no “random”.
       </DicaPagina>
       <form>
         <div
@@ -66,25 +96,49 @@ const Frases = () => {
           }
         />
       </form>
-      {data &&
-        data.map((item, index) => {
-          return (
-            <article className={styles.containerFrase} key={index}>
-              <cite className={styles.nomeAnime}>
-                {item.anime.length > 35
-                  ? item.anime.split(' ').slice(0, -2).join(' ')
-                  : item.anime}
-              </cite>
-              <p className={styles.frase}>"{item.quote}"</p>
-              <div className={styles.containerPersonagemEcopy}>
-                <p className={styles.personagem}>~{item.character}</p>
-                <CopySvg />
-              </div>
-            </article>
-          );
-        })}
+      <ul>
+        {data &&
+          Array.isArray(data) &&
+          data.map((item, index) => {
+            return (
+              <li key={index} className={styles.containerFrase}>
+                <cite className={styles.nomeAnime}>
+                  {item.anime.length > 35
+                    ? item.anime.split(' ').slice(0, -2).join(' ')
+                    : item.anime}
+                </cite>
+                <p className={styles.frase}>"{item.quote}"</p>
+                <div className={styles.containerPersonagemEcopy}>
+                  <p className={styles.personagem}>~{item.character}</p>
+                  <CopySvg />
+                </div>
+              </li>
+            );
+          })}
+      </ul>
+
+      {random === false && data && Array.isArray(data) && (
+        <div
+          className={`${stylesBtn.containerButtons} ${styles.frasesButtons}`}
+        >
+          <Button paginacao="true" onClick={previousButton}>
+            Anterior
+          </Button>
+          <Button paginacao="true" onClick={nextButton}>
+            Próximo
+          </Button>
+        </div>
+      )}
+
+      {loading && <DicaPagina>Carregando...</DicaPagina>}
       {naoEncontrado && (
-        <DicaPagina>Não encontramos nada com esse nome :(</DicaPagina>
+        <DicaPagina>
+          Acabaram as frases desse anime/personagem. Ou... você fez requisições
+          demais. Por favor, aguarde 1 hora e tente novamente.
+        </DicaPagina>
+      )}
+      {data && data.error && (
+        <DicaPagina>Você chegou ao fim da pagina.</DicaPagina>
       )}
     </section>
   );

@@ -15,8 +15,9 @@ export const ContextBuscarFrases = () => {
   const [random, setRandom] = React.useState(false);
   const [value, setValue] = React.useState('');
   const [naoEncontrado, setNaoEncontrado] = React.useState();
+  const [page, setPage] = React.useState(0);
 
-  const { request, data, loading, error } = useFetch();
+  const { request, data, loading, error, setData } = useFetch();
 
   function handleChange({ target }) {
     setNaoEncontrado(false);
@@ -46,35 +47,57 @@ export const ContextBuscarFrases = () => {
   }
 
   function anime404(response) {
-    if (response.ok === false) {
-      setNaoEncontrado(true);
+    if (response && response.ok === false) {
+      return true;
     }
   }
 
-  async function handleSearchQuote(e) {
-    e.preventDefault();
-    setNaoEncontrado(false);
-
+  async function requestsQuotes(page) {
     if (anime) {
-      const { url } = FIND_QUOTE_BY_ANIME_NAME(value);
-      const { response } = await request(url);
-      anime404(response);
+      const { url } = FIND_QUOTE_BY_ANIME_NAME(value, page);
+      const { response, json } = await request(url);
+      if (anime404(response) || response === undefined || null) {
+        setNaoEncontrado(true);
+        return null;
+      }
+
+      console.log(response);
+      console.log(json);
+      return json;
     }
     if (personagem) {
-      const { url } = FIND_QUOTE_BY_CHARACTER_NAME(value);
+      const { url } = FIND_QUOTE_BY_CHARACTER_NAME(value, page);
       const { response, json } = await request(url);
-      console.log(response);
-      anime404(response);
+      if (anime404(response) || response === undefined || null) {
+        setNaoEncontrado(true);
+        return null;
+      }
 
+      console.log(response);
       console.log(json);
+      return json;
     }
+
+    if (random) {
+      return null;
+    }
+  }
+  //Updating twice or none
+  async function handleSearchQuote(e) {
+    if (e && (e.type === 'click' || e.type === 'keydown')) e.preventDefault();
+    setNaoEncontrado(false);
+    setPage(0);
+    requestsQuotes(0);
     if (random) {
       const { url } = FIND_QUOTE_RANDOM();
       const { response, json } = await request(url);
       console.log(response);
-      anime404(response);
-
+      if (anime404(response) || response === undefined || null) {
+        setNaoEncontrado(true);
+        return null;
+      }
       console.log(json);
+      return json;
     }
   }
 
@@ -82,6 +105,7 @@ export const ContextBuscarFrases = () => {
     <BuscarFrasesContext.Provider
       value={{
         data,
+        setData,
         loading,
         request,
         error,
@@ -95,6 +119,9 @@ export const ContextBuscarFrases = () => {
         handleAnime,
         handlePersonagem,
         handleRandom,
+        requestsQuotes,
+        page,
+        setPage,
       }}
     >
       {<Outlet />}

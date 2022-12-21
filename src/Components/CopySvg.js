@@ -10,11 +10,16 @@ const CopySvg = ({ ...props }) => {
   }, [data]);
 
   function copyText({ target }) {
-    const textToBeCopied = `${target.parentNode.previousElementSibling.innerText} \n\n${target.previousElementSibling.innerText}`;
-    console.log(textToBeCopied);
-    if (textToBeCopied) {
-      navigator.clipboard.writeText(textToBeCopied);
-      setColorClipboardSvg('#6fb774');
+    if (target) {
+      const quote = target.parentNode.previousElementSibling.innerText;
+      const characterName = target.parentNode.innerText;
+      const textToBeCopied =
+        quote && characterName && `${quote} \n\n${characterName}`;
+
+      if (textToBeCopied !== undefined || null) {
+        navigator.clipboard.writeText(textToBeCopied);
+        setColorClipboardSvg('#6fb774');
+      }
     }
   }
 

@@ -37,7 +37,7 @@ const Nav = ({ header }) => {
         )}
         <Logo />
         <ul className={styles.navUl}>
-          <Link to="/procurar" end="true">
+          <Link to="/" end="true">
             <li onClick={closeMenuWhenRoute}>Procurar</li>
           </Link>
           <Link to="/frases">
@@ -61,7 +61,7 @@ const Nav = ({ header }) => {
         <div className={styles.containerNav}>
           <h3 className={styles.tituloNav}>NAVEGAÇÃO</h3>
           <ul className={styles.navUl}>
-            <Link to="/procurar" end="true">
+            <Link to="/" end="true">
               <li>Procurar</li>
             </Link>
             <Link to="/frases">

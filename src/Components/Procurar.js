@@ -14,7 +14,7 @@ const Procurar = () => {
   }
 
   return (
-    <main>
+    <main className={styles.containerProcurar}>
       <TituloPagina>
         Nos envie uma imagem contendo a cena do anime que procura
         <br />

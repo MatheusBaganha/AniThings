@@ -18,6 +18,10 @@
   margin-bottom: 48px;
 }
 
+.containerFrase:last-of-type {
+  margin-bottom: 32px;
+}
+
 .nomeAnime {
   font-size: 1rem;
   background-color: #CFFFC7;
@@ -46,7 +50,6 @@
   font-weight: bold;
   margin-top: 18px;
 }
-
 
 .containerPersonagemEcopy {
   display: flex;

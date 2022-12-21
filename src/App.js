@@ -6,7 +6,6 @@ import Frases from './Components/Frases';
 import Header from './Components/Header';
 import Populares from './Components/Populares';
 import Footer from './Components/Footer';
-import Home from './Components/Home';
 import { ContextBuscarFrases } from './Context/ContextBuscarFrases';
 import { ContextEncontrarAnime } from './Context/ContextEncontrarAnime';
 
@@ -16,8 +15,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route element={<ContextEncontrarAnime />}>
-          <Route path="/" end element={<Home />} />
-          <Route path="/procurar" element={<Procurar />} />
+          <Route path="/" end element={<Procurar />} />
           <Route path="/animeEncontrado" element={<AnimeEncontrado />} />
         </Route>
         <Route element={<ContextBuscarFrases />}>

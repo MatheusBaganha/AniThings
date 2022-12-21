@@ -123,7 +123,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: 64px;
+  margin-top: 74px;
 }
 
 footer .nav {
@@ -189,6 +189,7 @@ footer .nav {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-top: 64px;
   }
   
   footer .nav {

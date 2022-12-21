@@ -47,6 +47,7 @@
   border-radius: 2px;
   position: relative;
   top: -28px;
+  margin-bottom: -128px;
 }
 
 @media(max-width: 450px) {

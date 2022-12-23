@@ -8,6 +8,7 @@ import Populares from './Components/Populares';
 import Footer from './Components/Footer';
 import { ContextBuscarFrases } from './Context/ContextBuscarFrases';
 import { ContextEncontrarAnime } from './Context/ContextEncontrarAnime';
+import { ContextPopulares } from './Context/ContextPopulares';
 
 const App = () => {
   return (
@@ -21,7 +22,9 @@ const App = () => {
         <Route element={<ContextBuscarFrases />}>
           <Route path="/frases" element={<Frases />} />
         </Route>
-        <Route path="/populares" element={<Populares />} />
+        <Route element={<ContextPopulares />}>
+          <Route path="/populares" element={<Populares />} />
+        </Route>
         <Route
           path="/*"
           element={<div>Não encontrada. Pagina temporaria</div>}

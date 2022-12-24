@@ -62,7 +62,7 @@ const Frases = () => {
       <Head
         title={'Frases'}
         description={
-          'Aqui você poderá gerar diversas frases dos seus animes ou personagens favoritos! Também é possível gerar as frases de forma aleátoria, além disso, é possível copiar elas já formatadas!'
+          'Aqui você poderá gerar diversas frases dos seus animes ou personagens favoritos! Também é possível gerar as frases de forma aleatória, além disso, é possível copiar elas já formatadas!'
         }
       />
       <TituloPagina>
@@ -93,7 +93,7 @@ const Frases = () => {
             paddingRight: '12px',
           }}
         >
-          Para mostrar frases de maneira aleátoria, clique em “enviar”.
+          Para frases aleatórias, clique em “enviar”.
         </DicaPagina>
       )}
       <form>

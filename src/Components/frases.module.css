@@ -15,6 +15,12 @@
   animation: animateWhenQuoteAppear 1s forwards;
 }
 
+.esticar {
+  display: grid;
+  grid-template-rows: auto 1fr 5fr 1fr auto; 
+  min-height: 100vh; 
+}
+
 .containerFrase {
   display: block;
   margin: 0 auto;

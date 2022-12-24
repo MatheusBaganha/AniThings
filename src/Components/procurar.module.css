@@ -7,3 +7,9 @@
 .containerProcurar {
   margin-bottom: 128px;
 }
+
+.esticar {
+  display: grid;
+  grid-template-rows: auto 1fr 5fr 1fr auto; 
+  min-height: 100vh; 
+}

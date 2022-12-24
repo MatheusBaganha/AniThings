@@ -27,6 +27,7 @@ const Frases = () => {
     requestsQuotes,
     goTop,
   } = React.useContext(BuscarFrasesContext);
+  const sectionRef = React.useRef();
 
   React.useEffect(() => {
     if (mounted) {
@@ -52,12 +53,21 @@ const Frases = () => {
     return null;
   }
 
-  React.useEffect(() => {});
+  React.useEffect(() => {
+    if (mounted) return;
+    if (data) {
+      const section = sectionRef.current;
+      section.classList.remove(`${styles.esticar}`);
+    } else {
+      return;
+    }
+  }, [data]);
 
   return (
     <section
+      ref={sectionRef}
       style={{ marginTop: '-32px' }}
-      className={stylesAnime.animarContainerGeral}
+      className={`${stylesAnime.animarContainerGeral} ${styles.esticar}`}
     >
       <Head
         title={'Frases'}

@@ -75,7 +75,7 @@ const Frases = () => {
             paddingRight: '12px',
           }}
         >
-          Escreva o nome do anime que você tem interesse para ler as frases.
+          Escreva o nome do anime para ler as frases.
         </DicaPagina>
       )}
       {personagem && (
@@ -84,8 +84,7 @@ const Frases = () => {
             paddingRight: '12px',
           }}
         >
-          Escreva o nome do personagem que você tem interesse para ler suas
-          frases.
+          Escreva o nome do personagem para ler suas frases.
         </DicaPagina>
       )}
       {random && (
@@ -94,7 +93,7 @@ const Frases = () => {
             paddingRight: '12px',
           }}
         >
-          Para mostrar frases de maneira aleátoria, basta clicar no “enviar”.
+          Para mostrar frases de maneira aleátoria, clique em “enviar”.
         </DicaPagina>
       )}
       <form>

@@ -3,7 +3,7 @@ import styles from './populares.module.css';
 import stylesAnime from './animation.module.css';
 import { PopularesContext } from '../Context/ContextPopulares';
 
-const AnimeMangaContainer = ({ ativo }) => {
+const AnimeMangaContainer = () => {
   const { data } = React.useContext(PopularesContext);
 
   return (

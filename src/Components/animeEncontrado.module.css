@@ -112,6 +112,7 @@
   .maisInfo {
     max-width: 280px;
     padding: 6px;
+    margin-left: -7px;
   }
   
   .maisInfo span {

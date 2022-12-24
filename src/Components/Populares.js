@@ -45,7 +45,7 @@ const Manga = () => {
       >
         {ativo
           ? 'Abaixo estão os animes mais populares do momento.'
-          : 'Abaixo estão os mangás mais populares do momento.n'}
+          : 'Abaixo estão os mangás mais populares do momento.'}
       </DicaPagina>
       <div
         style={{ marginBottom: '36px' }}

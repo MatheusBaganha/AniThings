@@ -22,7 +22,15 @@ const Nav = ({ header }) => {
     navRef.current.classList.toggle('aberto');
   }
 
+  function goTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
   const closeMenuWhenRoute = React.useCallback((e) => {
+    goTop();
     navRef.current.classList.remove('aberto');
   }, []);
 
@@ -64,13 +72,13 @@ const Nav = ({ header }) => {
           <h3 className={styles.tituloNav}>NAVEGAÇÃO</h3>
           <ul className={styles.navUl}>
             <Link to="/" end="true">
-              <li>Procurar</li>
+              <li onClick={goTop}>Procurar</li>
             </Link>
             <Link to="/frases">
-              <li>Frases</li>
+              <li onClick={goTop}>Frases</li>
             </Link>
             <Link to="/populares">
-              <li>Populares</li>
+              <li onClick={goTop}>Populares</li>
             </Link>
           </ul>
         </div>

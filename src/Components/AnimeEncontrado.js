@@ -24,7 +24,6 @@ const AnimeEncontrado = () => {
       (context.data.result[0].similarity * 100).toFixed(2) + '%';
     const animeName = context.data.result[0].anilist.title.romaji;
     const episode = context.data.result[0].episode;
-    console.log(context.data);
     const conteudoAdulto = context.data.result[0].anilist.isAdult
       ? 'Sim'
       : 'Não';

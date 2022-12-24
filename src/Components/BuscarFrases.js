@@ -1,6 +1,7 @@
 import React from 'react';
 import EnviarBtn from './EnviarBtn';
 import stylesInput from './input.module.css';
+import stylesAnime from './animation.module.css';
 import Input from './Input';
 import { BuscarFrasesContext } from '../Context/ContextBuscarFrases';
 import useWindowDimensions from '../Hooks/useWindowDimensions';
@@ -18,7 +19,10 @@ const BuscarFrases = ({ ativo, type, placeholder }) => {
 
   return (
     <>
-      <div ativo={ativo} className={stylesInput.containerBuscar}>
+      <div
+        ativo={ativo}
+        className={`${stylesInput.containerBuscar} ${stylesAnime.animarInput}`}
+      >
         <Input
           type={type}
           placeholder={placeholder}

@@ -6,6 +6,8 @@
   gap: 48px 72px;
   max-width: max-content;
   margin: 0 auto;
+  animation: animateWhenVisible .3s forwards;
+  transition: .4s;
 }
 
 .containerAnime {
@@ -105,6 +107,19 @@
   max-height: none;
 }
 
+.link {
+  color: #60c166;
+  font-weight: bold;
+
+}
+
+.link:hover, .link:active, .link:visited  {
+  color: #7fcd84
+}
+
+.link:visited {
+  color: #438747;
+}
 
 @media(max-width: 1200px) {
   .containerGeral {

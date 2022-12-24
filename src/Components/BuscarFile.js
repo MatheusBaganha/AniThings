@@ -4,6 +4,7 @@ import EnviarBtn from './EnviarBtn';
 import Input from './Input';
 import styles from './input.module.css';
 import stylesPrevia from './previa.module.css';
+import stylesAnime from './animation.module.css';
 import Previa from './Previa';
 import { EncontrarAnimeContext } from '../Context/ContextEncontrarAnime';
 
@@ -12,7 +13,10 @@ const BuscarFile = ({ ativo, placeholder }) => {
 
   return (
     <>
-      <div ativo={ativo} className={styles.containerBuscarFile}>
+      <div
+        ativo={ativo}
+        className={`${styles.containerBuscarFile} ${stylesAnime.animarInput}`}
+      >
         <label className={styles.label}>
           <Input
             type="file"

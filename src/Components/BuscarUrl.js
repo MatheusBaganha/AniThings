@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './input.module.css';
 import stylesPrevia from './previa.module.css';
+import stylesAnime from './animation.module.css';
 import EnviarBtn from './EnviarBtn';
 import DicaPagina from './DicaPagina';
 import Input from './Input';
@@ -33,49 +34,54 @@ const Buscar = ({ ativo, type, placeholder }) => {
   }
 
   return (
-    <div ativo={ativo} className={styles.containerBuscar}>
-      <Input
-        type={type}
-        placeholder={placeholder}
-        onBlur={verifyURLonBlur}
-        onChange={handleUrlChange}
-        value={url}
-        required
-      />
+    <>
+      <div
+        ativo={ativo}
+        className={`${styles.containerBuscar} ${stylesAnime.animarInput}`}
+      >
+        <Input
+          type={type}
+          placeholder={placeholder}
+          onBlur={verifyURLonBlur}
+          onChange={handleUrlChange}
+          value={url}
+          required
+        />
 
-      {context.loading ? (
-        <EnviarBtn disabled>ENVIANDO...</EnviarBtn>
-      ) : (
-        <EnviarBtn
-          style={
-            width < 430
-              ? { position: 'relative', top: '-2px' }
-              : { position: 'static' }
-          }
-          handleSubmit={(e) => context.handleSearchByUrlImage(e, urlWrote)}
-        >
-          ENVIAR
-        </EnviarBtn>
-      )}
-
-      {urlWrote && (
-        <div className={stylesPrevia.containerPreviaUrl}>
-          <DicaPagina
-            style={{
-              textAlign: 'start',
-              paddingRight: '18px',
-              marginTop: '48px',
-              margin: '48px 0 0 0',
-              width: 'max-content',
-            }}
+        {context.loading ? (
+          <EnviarBtn disabled>ENVIANDO...</EnviarBtn>
+        ) : (
+          <EnviarBtn
+            style={
+              width < 430
+                ? { position: 'relative', top: '-2px' }
+                : { position: 'static' }
+            }
+            handleSubmit={(e) => context.handleSearchByUrlImage(e, urlWrote)}
           >
-            Prévia da imagem:
-          </DicaPagina>{' '}
-          <Previa imagem={urlWrote} />
-        </div>
-      )}
-      {invalidURL && <DicaPagina>URL inválida. Tente novamente.</DicaPagina>}
-    </div>
+            ENVIAR
+          </EnviarBtn>
+        )}
+
+        {urlWrote && (
+          <div className={stylesPrevia.containerPreviaUrl}>
+            <DicaPagina
+              style={{
+                textAlign: 'start',
+                paddingRight: '18px',
+                marginTop: '48px',
+                margin: '48px 0 0 0',
+                width: 'max-content',
+              }}
+            >
+              Prévia da imagem:
+            </DicaPagina>{' '}
+            <Previa imagem={urlWrote} />
+          </div>
+        )}
+        {invalidURL && <DicaPagina>URL inválida. Tente novamente.</DicaPagina>}
+      </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './animeEncontrado.module.css';
+import stylesAnime from './animation.module.css';
 import Feedback from './Feedback';
 import Previa from './Previa';
 import { EncontrarAnimeContext } from '../Context/ContextEncontrarAnime';
@@ -14,7 +15,7 @@ const AnimeEncontrado = () => {
     if (context.data) {
       return;
     } else {
-      navigate('/procurar');
+      navigate('/');
     }
   });
 
@@ -42,7 +43,9 @@ const AnimeEncontrado = () => {
     return (
       <>
         <Feedback />
-        <article className={styles.containerGeral}>
+        <article
+          className={`${styles.containerGeral} ${stylesAnime.animarContainerGeral}`}
+        >
           <section className={styles.containerEncontrado}>
             {context.data && (
               <div>

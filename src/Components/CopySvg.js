@@ -18,6 +18,7 @@ const CopySvg = ({ ...props }) => {
 
       if (textToBeCopied !== undefined || null) {
         navigator.clipboard.writeText(textToBeCopied);
+        target.style.scale = 1.1;
         setColorClipboardSvg('#6fb774');
       }
     }
@@ -30,6 +31,8 @@ const CopySvg = ({ ...props }) => {
         position: 'relative',
         top: '2px',
         cursor: 'pointer',
+        scale: 0.9,
+        transition: '.4s',
       }}
       onClick={copyText}
       xmlns="http://www.w3.org/2000/svg"

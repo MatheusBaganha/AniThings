@@ -4,9 +4,11 @@ import DicaPagina from './DicaPagina';
 import TituloPagina from './TituloPagina';
 import stylesBtn from './procurar.module.css';
 import styles from './frases.module.css';
+import stylesAnime from './animation.module.css';
 import BuscarFrases from './BuscarFrases';
 import { BuscarFrasesContext } from '../Context/ContextBuscarFrases';
 import CopySvg from './CopySvg';
+import { Head } from './Head';
 
 const Frases = () => {
   const [mounted, setMounted] = React.useState(true);
@@ -32,8 +34,8 @@ const Frases = () => {
       return;
     }
 
-    goTop();
     requestsQuotes(page);
+    goTop();
   }, [page]);
 
   function previousButton() {
@@ -50,19 +52,51 @@ const Frases = () => {
     return null;
   }
 
+  React.useEffect(() => {});
+
   return (
-    <section>
+    <section
+      style={{ marginTop: '-32px' }}
+      className={stylesAnime.animarContainerGeral}
+    >
+      <Head
+        title={'Frases'}
+        description={
+          'Aqui você poderá gerar diversas frases dos seus animes ou personagens favoritos! Também é possível gerar as frases de forma aleátoria, além disso, é possível copiar elas já formatadas!'
+        }
+      />
       <TituloPagina>
         Escreva o nome do anime ou personagem para ler suas frases mais
         impactantes!{' '}
       </TituloPagina>
-      <DicaPagina
-        style={{
-          paddingRight: '12px',
-        }}
-      >
-        Para mostrar frases de maneira aleátoria, basta clicar no “random”.
-      </DicaPagina>
+      {anime && (
+        <DicaPagina
+          style={{
+            paddingRight: '12px',
+          }}
+        >
+          Escreva o nome do anime que você tem interesse para ler as frases.
+        </DicaPagina>
+      )}
+      {personagem && (
+        <DicaPagina
+          style={{
+            paddingRight: '12px',
+          }}
+        >
+          Escreva o nome do personagem que você tem interesse para ler suas
+          frases.
+        </DicaPagina>
+      )}
+      {random && (
+        <DicaPagina
+          style={{
+            paddingRight: '12px',
+          }}
+        >
+          Para mostrar frases de maneira aleátoria, basta clicar no “enviar”.
+        </DicaPagina>
+      )}
       <form>
         <div
           className={`${stylesBtn.containerButtons} ${styles.frasesButtons}`}
@@ -89,18 +123,23 @@ const Frases = () => {
             Random
           </Button>
         </div>
-        <BuscarFrases
-          placeholder={
-            random ? 'Enviar para frases aleatórias' : 'Anime | Personagem'
-          }
-        />
+        {anime && <BuscarFrases placeholder="Anime | Personagem" />}
+
+        {personagem && <BuscarFrases placeholder="Anime | Personagem" />}
+
+        {random && (
+          <BuscarFrases placeholder={'Enviar para frases aleatórias'} />
+        )}
       </form>
       <ul>
         {data &&
           Array.isArray(data) &&
-          data.map((item, index) => {
+          data.map((item) => {
             return (
-              <li key={index} className={styles.containerFrase}>
+              <li
+                key={item.quote}
+                className={`${styles.containerFrase} ${styles.animateQuote}`}
+              >
                 <cite className={styles.nomeAnime}>
                   {item.anime.length > 35
                     ? item.anime.split(' ').slice(0, -2).join(' ')
@@ -127,6 +166,19 @@ const Frases = () => {
             Próximo
           </Button>
         </div>
+      )}
+      {random && data && Array.isArray(data) && (
+        <svg
+          className={styles.svgArrowTopRandom + ' bi bi-arrow-up-circle-fill'}
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          fill="#7CCC81"
+          viewBox="0 0 16 16"
+          onClick={goTop}
+        >
+          <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+        </svg>
       )}
 
       {loading && <DicaPagina>Carregando...</DicaPagina>}

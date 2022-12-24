@@ -35,7 +35,9 @@ const Nav = ({ header }) => {
             className={styles.menuMobileBtn}
           ></button>
         )}
-        <Logo />
+        <span className={styles.logoHeader}>
+          <Logo />
+        </span>
         <ul className={styles.navUl}>
           <Link to="/" end="true">
             <li onClick={closeMenuWhenRoute}>Procurar</li>

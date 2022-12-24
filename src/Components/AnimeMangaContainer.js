@@ -1,15 +1,14 @@
 import React from 'react';
 import styles from './populares.module.css';
+import stylesAnime from './animation.module.css';
 import { PopularesContext } from '../Context/ContextPopulares';
-import DicaPagina from './DicaPagina';
 
 const AnimeMangaContainer = ({ ativo }) => {
-  const { data, loading } = React.useContext(PopularesContext);
+  const { data } = React.useContext(PopularesContext);
 
   return (
     <>
-      {loading && <DicaPagina>Carregando...</DicaPagina>}
-      {loading === false && (
+      {data && (
         <section className={styles.containerGeral}>
           {data &&
             data.data.map((animeManga) => {
@@ -24,12 +23,15 @@ const AnimeMangaContainer = ({ ativo }) => {
                 episodes: attributes.episodeLength,
                 score: (Number(attributes.averageRating) / 10).toFixed(2),
                 nsfw: attributes.nsfw,
-                youtubeVideo: `https://www.youtube.com/watch?v=${attributes.youtubeVideoId}`,
+                youtubeVideo: attributes.youtubeVideoId,
                 synopsis: attributes.synopsis,
               };
 
               return (
-                <article key={animeManga.id} className={styles.containerAnime}>
+                <article
+                  key={animeManga.id}
+                  className={`${styles.containerAnime} ${stylesAnime.animarContainerGeral}`}
+                >
                   <div className={styles.containerFotoDoAnime}>
                     <img src={info.image} alt="capa do mangá" />
                   </div>
@@ -59,11 +61,12 @@ const AnimeMangaContainer = ({ ativo }) => {
                       </p>
                     )}
 
-                    {animeManga.attributes.youtubeVideo && (
+                    {info.youtubeVideo && (
                       <p>
                         Trailer:{' '}
                         <a
-                          href={info.youtubeVideo}
+                          className={styles.link}
+                          href={`https://www.youtube.com/watch?v=${info.youtubeVideo}`}
                           target="_blank"
                           rel="noreferrer"
                         >

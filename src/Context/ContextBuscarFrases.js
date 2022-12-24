@@ -19,6 +19,10 @@ export const ContextBuscarFrases = () => {
 
   const { request, data, loading, error, setData } = useFetch();
 
+  React.useEffect(() => {
+    setValue('');
+  }, [anime, personagem, random]);
+
   function handleChange({ target }) {
     setNaoEncontrado(false);
     const animeOrCharacterName = target.value.trim();
@@ -62,10 +66,9 @@ export const ContextBuscarFrases = () => {
         return null;
       }
 
-      console.log(response);
-      console.log(json);
       return json;
     }
+
     if (personagem) {
       const { url } = FIND_QUOTE_BY_CHARACTER_NAME(value, page);
       const { response, json } = await request(url);
@@ -74,8 +77,6 @@ export const ContextBuscarFrases = () => {
         return null;
       }
 
-      console.log(response);
-      console.log(json);
       return json;
     }
 
@@ -83,7 +84,7 @@ export const ContextBuscarFrases = () => {
       return null;
     }
   }
-  //Updating twice or none
+
   async function handleSearchQuote(e) {
     if (e && (e.type === 'click' || e.type === 'keydown')) e.preventDefault();
     setNaoEncontrado(false);
@@ -92,19 +93,17 @@ export const ContextBuscarFrases = () => {
     if (random) {
       const { url } = FIND_QUOTE_RANDOM();
       const { response, json } = await request(url);
-      console.log(response);
       if (anime404(response) || response === undefined || null) {
         setNaoEncontrado(true);
         return null;
       }
-      console.log(json);
       return json;
     }
   }
 
   function goTop() {
     window.scrollTo({
-      top: 0,
+      top: 400,
       behavior: 'smooth',
     });
   }

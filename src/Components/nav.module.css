@@ -5,6 +5,11 @@
   padding: 32px 36px;
 }
 
+.logoHeader {
+  margin-left: -16px;
+  margin-bottom: -12px;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -49,7 +54,7 @@
     gap: 0;
     position: absolute;
     left: 0px;
-    top: 96px;
+    top: 88px;
     z-index: 2;
     background-color: #22455A;
     width: 100vw;
@@ -60,7 +65,7 @@
   }
 
   .header .nav:global(.aberto) .navUl {
-    height: 35vh;
+    height: 40vh;
     visibility: visible;
     overflow-y: auto;
   }
@@ -70,10 +75,14 @@
     width: 88vw;
     font-size: 1.125rem;
     position: relative;
-    left: 42px;
+    left: 28px;
     margin-bottom: 16px;
     padding-bottom: 16px;
     border-bottom: 1px solid rgba(0, 0, 0, .05);
+  }
+
+  .header .navUl li:first-of-type {
+    padding-top: 12px;
   }
 
   .header .menuMobileBtn {
@@ -180,6 +189,11 @@ footer .nav {
 }
 
 @media(max-width: 900px) {
+  .logoHeader {
+    width: 160px;
+    margin-top: 0px;
+  }
+
   .logo {
     margin-left: -15px;
   }

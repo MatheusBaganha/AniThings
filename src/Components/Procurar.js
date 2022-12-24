@@ -4,6 +4,7 @@ import BuscarFile from './BuscarFile';
 import Button from './Button';
 import DicaPagina from './DicaPagina';
 import styles from './procurar.module.css';
+import stylesAnime from './animation.module.css';
 import TituloPagina from './TituloPagina';
 
 const Procurar = () => {
@@ -14,7 +15,9 @@ const Procurar = () => {
   }
 
   return (
-    <main className={styles.containerProcurar}>
+    <main
+      className={`${styles.containerProcurar} ${stylesAnime.animarContainerGeral}`}
+    >
       <TituloPagina>
         Nos envie uma imagem contendo a cena do anime que procura
         <br />
@@ -58,10 +61,15 @@ const Procurar = () => {
           </Button>
         </div>
         {Procurar && ativo && (
-          <BuscarFile ativo={ativo && 'true'} placeholder="Upload da imagem" />
+          <BuscarFile
+            className={styles.animarContainerGeral}
+            ativo={ativo && 'true'}
+            placeholder="Upload da imagem"
+          />
         )}
         {Procurar && !ativo && (
           <Buscar
+            className={styles.animarContainerGeral}
             ativo={!ativo && 'true'}
             type="text"
             placeholder="URL da imagem"

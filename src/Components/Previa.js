@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from './previa.module.css';
+import stylesAnime from './animation.module.css';
 
 const Previa = ({ imagem, onError, video, ...props }) => {
   if (imagem) {
     return (
-      <div className={styles.imgContainer} {...props}>
+      <div
+        className={`${styles.imgContainer} ${stylesAnime.animarContainerGeral}`}
+        {...props}
+      >
         <img
           onError={onError}
           className={styles.img}
@@ -16,7 +20,9 @@ const Previa = ({ imagem, onError, video, ...props }) => {
   }
   if ((imagem === null || undefined) && video) {
     return (
-      <div className={styles.imgContainer}>
+      <div
+        className={`${styles.imgContainer} ${stylesAnime.animarContainerGeral}`}
+      >
         <video
           className={styles.img}
           autoPlay

@@ -10,14 +10,14 @@ export const ContextPopulares = () => {
 
   async function getPopularAnimeAtTheMoment() {
     const { url } = GET_POPULAR_ANIME();
-    const { response, json } = await request(url);
-    console.log(json);
+    const { json } = await request(url);
+    return json;
   }
 
   async function getPopularMangaAtTheMoment() {
     const { url } = GET_POPULAR_MANGA();
-    const { response, json } = await request(url);
-    console.log(json);
+    const { json } = await request(url);
+    return json;
   }
 
   return (

@@ -1,0 +1,33 @@
+@keyframes animateWhenLoadPage {
+  from {
+    opacity: 0;
+    transform: translateY(120px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes animateInputOnChange {
+  from {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animarContainerGeral {
+  transition: .3s;
+  animation: animateWhenLoadPage .3s forwards;
+}
+
+.animarInput {
+  transition: .3s;
+  animation: animateInputOnChange .3s forwards;
+}

@@ -16,9 +16,13 @@
 }
 
 .esticar {
-  display: grid;
-  grid-template-rows: auto 1fr 5fr 1fr auto; 
+  display: flex;
+  flex-direction: column;
   min-height: 100vh; 
+}
+
+.esticar form {
+  flex: 1;
 }
 
 .containerFrase {
@@ -38,7 +42,7 @@
 }
 
 .containerFrase + .containerFrase {
-  margin-bottom: 48px;
+  margin-bottom: 52px;
 }
 
 .containerFrase:last-of-type {

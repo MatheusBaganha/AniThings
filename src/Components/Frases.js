@@ -27,7 +27,6 @@ const Frases = () => {
     requestsQuotes,
     goTop,
   } = React.useContext(BuscarFrasesContext);
-  const sectionRef = React.useRef();
 
   React.useEffect(() => {
     if (mounted) {
@@ -53,19 +52,8 @@ const Frases = () => {
     return null;
   }
 
-  React.useEffect(() => {
-    if (mounted) return;
-    if (data) {
-      const section = sectionRef.current;
-      section.classList.remove(`${styles.esticar}`);
-    } else {
-      return;
-    }
-  }, [data]);
-
   return (
     <section
-      ref={sectionRef}
       style={{ marginTop: '-32px' }}
       className={`${stylesAnime.animarContainerGeral} ${styles.esticar}`}
     >
@@ -140,6 +128,7 @@ const Frases = () => {
           <BuscarFrases placeholder={'Enviar para frases aleatórias'} />
         )}
       </form>
+      {loading && <DicaPagina>Carregando...</DicaPagina>}
       <ul>
         {data &&
           Array.isArray(data) &&
@@ -164,7 +153,7 @@ const Frases = () => {
           })}
       </ul>
 
-      {random === false && data && Array.isArray(data) && (
+      {random === false && data && Array.isArray(data) && loading === false && (
         <div
           className={`${stylesBtn.containerButtons} ${styles.frasesButtons}`}
         >
@@ -190,7 +179,6 @@ const Frases = () => {
         </svg>
       )}
 
-      {loading && <DicaPagina>Carregando...</DicaPagina>}
       {naoEncontrado && (
         <DicaPagina
           style={{ paddingRight: '8px', paddingLeft: '8px', lineHeight: 1.7 }}

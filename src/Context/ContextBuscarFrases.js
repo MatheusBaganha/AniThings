@@ -25,7 +25,7 @@ export const ContextBuscarFrases = () => {
 
   function handleChange({ target }) {
     setNaoEncontrado(false);
-    const animeOrCharacterName = target.value.trim();
+    const animeOrCharacterName = target.value;
     setValue(animeOrCharacterName);
   }
 
@@ -59,7 +59,9 @@ export const ContextBuscarFrases = () => {
 
   async function requestsQuotes(page) {
     if (anime) {
-      const { url } = FIND_QUOTE_BY_ANIME_NAME(value, page);
+      const newValue = value.trim();
+
+      const { url } = FIND_QUOTE_BY_ANIME_NAME(newValue, page);
       const { response, json } = await request(url);
       if (anime404(response) || response === undefined || null) {
         setNaoEncontrado(true);
@@ -70,7 +72,8 @@ export const ContextBuscarFrases = () => {
     }
 
     if (personagem) {
-      const { url } = FIND_QUOTE_BY_CHARACTER_NAME(value, page);
+      const newValue = value.trim();
+      const { url } = FIND_QUOTE_BY_CHARACTER_NAME(newValue, page);
       const { response, json } = await request(url);
       if (anime404(response) || response === undefined || null) {
         setNaoEncontrado(true);

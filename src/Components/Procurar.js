@@ -6,7 +6,6 @@ import DicaPagina from './DicaPagina';
 import styles from './procurar.module.css';
 import stylesAnime from './animation.module.css';
 import TituloPagina from './TituloPagina';
-import { EncontrarAnimeContext } from '../Context/ContextEncontrarAnime';
 
 const Procurar = () => {
   const [ativo, setAtivo] = React.useState(true);

@@ -4,12 +4,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from './paginaNaoEncontrada.module.css';
 
 const PaginaNaoEncontrada = () => {
-  // const navigate = useNavigate();
-  // React.useEffect(() => {
-  //   setTimeout(() => {
-  //     navigate('/');
-  //   }, 4000);
-  // }, [navigate]);
+  const navigate = useNavigate();
+  React.useEffect(() => {
+    setTimeout(() => {
+      navigate('/');
+    }, 4000);
+  }, [navigate]);
 
   return (
     <>

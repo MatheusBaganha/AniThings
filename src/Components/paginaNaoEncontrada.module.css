@@ -1,13 +1,13 @@
 .container404 {
   display: block;
-  max-width: 800px;
-  width: 20vw;
+  width: max-content;
   margin: 92px auto;
 }
 
 .statusError {
   font-size: 7rem;
   font-weight: bold;
+  width: max-content;
   color: #22455A;
 }
 
@@ -15,6 +15,7 @@
   font-size: 1.5rem;
   color: #363636;
   margin-left: -18px;
+  width: max-content;
 }
 
 .link > * {

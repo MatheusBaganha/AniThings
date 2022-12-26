@@ -4,12 +4,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from './paginaNaoEncontrada.module.css';
 
 const PaginaNaoEncontrada = () => {
-  const navigate = useNavigate();
-  React.useEffect(() => {
-    setTimeout(() => {
-      navigate('/');
-    }, 4000);
-  }, [navigate]);
+  // const navigate = useNavigate();
+  // React.useEffect(() => {
+  //   setTimeout(() => {
+  //     navigate('/');
+  //   }, 4000);
+  // }, [navigate]);
 
   return (
     <>
@@ -19,10 +19,9 @@ const PaginaNaoEncontrada = () => {
       </div>
       <DicaPagina
         style={{
-          marginTop: '-36px',
-          marginLeft: '-48px',
-          marginBottom: '198px',
-          fontSize: '1.4rem',
+          margin: '-36px auto 198px auto',
+          fontSize: '1.1rem',
+          width: 'max-content',
         }}
       >
         <b className={styles.link}>

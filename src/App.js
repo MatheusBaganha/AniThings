@@ -9,6 +9,7 @@ import Footer from './Components/Footer';
 import { ContextBuscarFrases } from './Context/ContextBuscarFrases';
 import { ContextEncontrarAnime } from './Context/ContextEncontrarAnime';
 import { ContextPopulares } from './Context/ContextPopulares';
+import PaginaNaoEncontrada from './Components/PaginaNaoEncontrada';
 
 const App = () => {
   return (
@@ -25,10 +26,7 @@ const App = () => {
         <Route element={<ContextPopulares />}>
           <Route path="/populares" element={<Populares />} />
         </Route>
-        <Route
-          path="/*"
-          element={<div>Não encontrada. Pagina temporaria</div>}
-        />
+        <Route path="/*" element={<PaginaNaoEncontrada />} />
       </Routes>
       <Footer />
     </BrowserRouter>

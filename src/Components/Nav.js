@@ -43,7 +43,7 @@ const Nav = ({ header }) => {
             className={styles.menuMobileBtn}
           ></button>
         )}
-        <span className={styles.logoHeader}>
+        <span onClick={goTop} className={styles.logoHeader}>
           <Logo />
         </span>
         <ul className={styles.navUl}>
@@ -64,7 +64,7 @@ const Nav = ({ header }) => {
   if (header === null || undefined) {
     return (
       <nav className={styles.nav}>
-        <span className={styles.logo}>
+        <span onClick={goTop} className={styles.logo}>
           <Logo />
         </span>
 

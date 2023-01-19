@@ -138,14 +138,16 @@ const Frases = () => {
                 key={item.quote}
                 className={`${styles.containerFrase} ${styles.animateQuote}`}
               >
-                <cite className={styles.nomeAnime}>
+                <cite translate="no" className={styles.nomeAnime}>
                   {item.anime.length > 35
                     ? item.anime.split(' ').slice(0, -2).join(' ')
                     : item.anime}
                 </cite>
                 <p className={styles.frase}>"{item.quote}"</p>
                 <div className={styles.containerPersonagemEcopy}>
-                  <p className={styles.personagem}>~{item.character}</p>
+                  <p translate="no" className={styles.personagem}>
+                    ~{item.character}
+                  </p>
                   <CopySvg />
                 </div>
               </li>

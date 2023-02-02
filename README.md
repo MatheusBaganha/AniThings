@@ -1,4 +1,4 @@
-# README - AniThings
+# AniThings
 
 O AniThings é um aplicativo web feito em React que permite aos usuários encontrar informações sobre seus animes favoritos de forma fácil e rápida. É possível fazer upload de uma foto ou inserir uma URL da imagem para obter informações detalhadas sobre o anime em questão.
 

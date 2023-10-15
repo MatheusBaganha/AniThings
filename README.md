@@ -1,3 +1,5 @@
+<img width="100%" height="250px"  src="https://raw.githubusercontent.com/MatheusBaganha/AniThings/1570c42a4d1ff25224f1967ce6659850017d4784/public/favicon-satoru-gojo.svg"/>
+
 # AniThings
 
 O AniThings é um aplicativo web feito em React que permite aos usuários encontrar informações sobre seus animes favoritos de forma fácil e rápida. É possível fazer upload de uma foto ou inserir uma URL da imagem para obter informações detalhadas sobre o anime em questão.

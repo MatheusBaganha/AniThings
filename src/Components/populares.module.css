@@ -1,9 +1,9 @@
 .containerGeral {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: max-content;
   align-items: flex-start;
-  gap: 48px 72px;
+  gap: 32px;
   max-width: max-content;
   margin: 0 auto;
   animation: animateWhenVisible .3s forwards;
@@ -13,7 +13,7 @@
 .containerAnime {
   display: block;
   width: 80vw;
-  max-width: 330px;
+  max-width: 320px;
   margin: 0 auto;
   border-radius: 4px;
   background-color: #F5F4F4;

@@ -183,9 +183,9 @@ const Frases = () => {
 
       {naoEncontrado && (
         <DicaPagina
-          style={{ paddingRight: '8px', paddingLeft: '8px', lineHeight: 1.7 }}
+          style={{ marginBottom: '92px', paddingRight: '8px', paddingLeft: '8px', lineHeight: 1.7 }}
         >
-          Nada por aqui :( <br /> Três coisas podem ter ocorrido: <br />
+          Nada por aqui :( <br /> Essas coisas podem ter ocorrido: <br />
           <br /> 1 - Acabaram as frases desse anime/personagem. <br /> 2 - Não
           existe nenhuma frase com esse anime/personagem na API. <br /> 3 - Você
           fez requisições demais. Por favor, aguarde 1 hora e tente novamente.

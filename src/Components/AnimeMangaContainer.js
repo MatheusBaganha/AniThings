@@ -63,15 +63,17 @@ const AnimeMangaContainer = () => {
 
                     {info.youtubeVideo && (
                       <p>
+                        <b>
                         Trailer:{' '}
-                        <a
-                          className={styles.link}
-                          href={`https://www.youtube.com/watch?v=${info.youtubeVideo}`}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Clique para assistir
-                        </a>
+                          <a
+                            className={styles.link}
+                            href={`https://www.youtube.com/watch?v=${info.youtubeVideo}`}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Clique para assistir
+                          </a>
+                        </b>
                       </p>
                     )}
                     {info.synopsis && (

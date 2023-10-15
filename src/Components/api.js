@@ -19,11 +19,11 @@ export function SEARCH_IMAGE_BY_URL(urlImage) {
 }
 
 // AnimeChan API
-const API_URL_ANIME_CHAN = 'https://animechan.vercel.app/api/quotes';
+const API_URL_ANIME_CHAN = 'https://animechan.xyz/api/quotes';
 
 export function FIND_QUOTE_RANDOM() {
   return {
-    url: API_URL_ANIME_CHAN,
+      url: API_URL_ANIME_CHAN,
   };
 }
 
